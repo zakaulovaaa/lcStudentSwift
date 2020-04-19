@@ -9,28 +9,59 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    var userModelController: UserModelController!;
+    
+    var userModelController = UserModelController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //userModelController.user.is_authorized
+        
+        let is_authorized = userModelController.user.is_authorized
+        
+        if ( is_authorized ) {
+            DispatchQueue.main.async(execute: {
+                let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyboard.instantiateViewController(withIdentifier: "Menu") as! Menu
+                newViewController.modalPresentationStyle = .overFullScreen
+                self.present(newViewController, animated: true, completion: nil)
+            })
+        } else {
+            DispatchQueue.main.async(execute: {
+                let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyboard.instantiateViewController(withIdentifier: "SignIn") as! SignIn
+                newViewController.modalPresentationStyle = .overFullScreen
+                self.present(newViewController, animated: true, completion: nil)
+            })
+        }
         
         
-//        if ( true ) {
-//            
-//        } else {
-//            performSegue(withIdentifier: "mainGoSignIn", sender: nil);
-//        }
         
-        // Do any additional setup after loading the view.
     }
     
-    @IBAction func qq(_ sender: Any) {
-        performSegue(withIdentifier: "mainGoSignIn", sender: nil)
-    }
     
+    @IBAction func sign(_ sender: Any) {
+        
 
+        
+    }
+    
+    
+    @IBAction func menu(_ sender: Any) {
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyboard.instantiateViewController(withIdentifier: "Menu") as! Menu
+        newViewController.modalPresentationStyle = .overFullScreen
+        self.present(newViewController, animated: true, completion: nil)
+    }
+    
 
 }
 
+/*
+ 
+ if let newViewController = storyboard?.instantiateViewController(withIdentifier: "NewViewController") as? NewViewController {
+  newViewController.modalTransitionStyle = .crossDissolve // это значение можно менять для разных видов анимации появления
+  newViewController.modalPresentationStyle = .overCurrentContext // это та самая волшебная строка, убрав или закомментировав ее, вы получите появление смахиваемого контроллера
+  present(newViewController, animated: false, completion: nil)
+ }
+ 
+ */

@@ -18,6 +18,7 @@
 		4D9E8B02243DF780001B262D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D9E8B00243DF780001B262D /* LaunchScreen.storyboard */; };
 		4D9E8B0D243DF780001B262D /* lc_studentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E8B0C243DF780001B262D /* lc_studentTests.swift */; };
 		4D9E8B18243DF780001B262D /* lc_studentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E8B17243DF780001B262D /* lc_studentUITests.swift */; };
+		4DAFBE56244C8CB80040C3D0 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAFBE55244C8CB80040C3D0 /* SignIn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		4D9E8B13243DF780001B262D /* lc_studentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lc_studentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D9E8B17243DF780001B262D /* lc_studentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lc_studentUITests.swift; sourceTree = "<group>"; };
 		4D9E8B19243DF780001B262D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4DAFBE55244C8CB80040C3D0 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		4D9E8AF4243DF77C001B262D /* lc_student */ = {
 			isa = PBXGroup;
 			children = (
+				4DAFBE54244C8C8B0040C3D0 /* signIn */,
 				4D5EB068244B66DC00B19EDC /* Menu */,
 				4D5EB05F244B5C6100B19EDC /* StatusUser */,
 				4D9E8AF5243DF77C001B262D /* AppDelegate.swift */,
@@ -151,6 +154,14 @@
 				4D9E8B19243DF780001B262D /* Info.plist */,
 			);
 			path = lc_studentUITests;
+			sourceTree = "<group>";
+		};
+		4DAFBE54244C8C8B0040C3D0 /* signIn */ = {
+			isa = PBXGroup;
+			children = (
+				4DAFBE55244C8CB80040C3D0 /* SignIn.swift */,
+			);
+			path = signIn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +299,7 @@
 				4D5EB061244B5C9C00B19EDC /* User.swift in Sources */,
 				4D5EB065244B5EEF00B19EDC /* UserModelController.swift in Sources */,
 				4D9E8AFA243DF77C001B262D /* ViewController.swift in Sources */,
+				4DAFBE56244C8CB80040C3D0 /* SignIn.swift in Sources */,
 				4D9E8AF6243DF77C001B262D /* AppDelegate.swift in Sources */,
 				4D9E8AF8243DF77C001B262D /* SceneDelegate.swift in Sources */,
 			);

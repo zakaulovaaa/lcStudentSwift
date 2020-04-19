@@ -9,11 +9,21 @@
 import UIKit
 
 @UIApplicationMain
+
+
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+/*
+     let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+     let newViewController = storyboard.instantiateViewController(withIdentifier: "Menu") as! Menu
+     newViewController.modalPresentationStyle = .overFullScreen
+     self.present(newViewController, animated: true, completion: nil)
+     
+     */
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        print("hello")
+        
         // Override point for customization after application launch.
         return true
     }
