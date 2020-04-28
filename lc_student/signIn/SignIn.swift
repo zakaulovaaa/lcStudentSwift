@@ -1,79 +1,41 @@
-//
-//  SignIn.swift
-//  lc_student
-//
-//  Created by Дарья Закаулова on 19.04.2020.
-//  Copyright © 2020 Дарья Закаулова. All rights reserved.
-//
-
 import UIKit
 
-class SignIn: UIViewController {
 
+class SignIn: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
+    
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     
     @IBAction func btnSignIn(_ sender: Any) {
         
-        guard let url = URL(string: "http://localhost:8000/sign_in/") else { return }
-        var isSignIn = false;
-        
         let jsonObject: [String: Any] = [
             "email": email.text!,
             "password": password.text!
         ]
+        var json_request: [String : Any] = [:]
         
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        guard let httpBody = try? JSONSerialization.data(withJSONObject: jsonObject, options: []) else { return }
-        request.httpBody = httpBody
-        let session = URLSession.shared
-        session.dataTask(with: request) { (data, response, error) in
-            if let response = response {
-                print(response)
-            }
-            
-            guard let data = data else { return }
-            do {
-                let json = try JSONSerialization.jsonObject(with: data, options: [])
-//                self.navigationController.pushViewController(GoToTheMenu, animated: true)
-                if let dict = json as? [String: Any] {
-                    let q = dict["status"]! as? Bool;
-                    print( q! )
-                    if ( q! ) {
-                        isSignIn = true;
+        requestMain(urlStr: "http://localhost:8000/sign_in/",
+                    jsonBody: jsonObject,
+                    finished: { answer in
+                        json_request = answer
                     }
-//                    print(dict)
-//                    print(dict["status"]!)
-                }
-            } catch {
-                print(error)
+        )
+        
+        if let status_auth = json_request[ "status" ]! as? Bool {
+            if ( status_auth ) {
+                let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let newViewController = storyboard.instantiateViewController(withIdentifier: "Menu") as! Menu
+                newViewController.modalPresentationStyle = .overFullScreen
+                self.present(newViewController, animated: true, completion: nil)
             }
-            
-        }.resume()
-        
-        print("is sign in = ")
-        print(isSignIn)
-        if ( isSignIn ) {
-            let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let newViewController = storyboard.instantiateViewController(withIdentifier: "Menu") as! Menu
-            newViewController.modalPresentationStyle = .overFullScreen
-            self.present(newViewController, animated: true, completion: nil)
         }
-        
-        /*
-        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let newViewController = storyboard.instantiateViewController(withIdentifier: "Menu") as! Menu
-        newViewController.modalPresentationStyle = .overFullScreen
-        self.present(newViewController, animated: true, completion: nil)
-        */
     }
+        
     
     /*
     // MARK: - Navigation
@@ -86,3 +48,15 @@ class SignIn: UIViewController {
     */
 
 }
+
+
+
+
+
+
+/*
+ 
+
+ 
+ 
+ */

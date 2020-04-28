@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D1B37E62455E2A6007E4DB6 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B37E52455E2A6007E4DB6 /* ServiceRequest.swift */; };
 		4D5EB061244B5C9C00B19EDC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5EB060244B5C9C00B19EDC /* User.swift */; };
 		4D5EB065244B5EEF00B19EDC /* UserModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5EB064244B5EEF00B19EDC /* UserModelController.swift */; };
 		4D5EB06A244B66F100B19EDC /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5EB069244B66F100B19EDC /* Menu.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D1B37E52455E2A6007E4DB6 /* ServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
 		4D5EB060244B5C9C00B19EDC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4D5EB064244B5EEF00B19EDC /* UserModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelController.swift; sourceTree = "<group>"; };
 		4D5EB069244B66F100B19EDC /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D1B37E42455E22B007E4DB6 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				4D1B37E52455E2A6007E4DB6 /* ServiceRequest.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
 		4D5EB05F244B5C6100B19EDC /* StatusUser */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 		4D9E8AF4243DF77C001B262D /* lc_student */ = {
 			isa = PBXGroup;
 			children = (
+				4D1B37E42455E22B007E4DB6 /* service */,
 				4DAFBE54244C8C8B0040C3D0 /* signIn */,
 				4D5EB068244B66DC00B19EDC /* Menu */,
 				4D5EB05F244B5C6100B19EDC /* StatusUser */,
@@ -296,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D5EB06A244B66F100B19EDC /* Menu.swift in Sources */,
+				4D1B37E62455E2A6007E4DB6 /* ServiceRequest.swift in Sources */,
 				4D5EB061244B5C9C00B19EDC /* User.swift in Sources */,
 				4D5EB065244B5EEF00B19EDC /* UserModelController.swift in Sources */,
 				4D9E8AFA243DF77C001B262D /* ViewController.swift in Sources */,
