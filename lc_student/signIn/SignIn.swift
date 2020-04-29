@@ -36,6 +36,16 @@ class SignIn: UIViewController {
         }
     }
         
+    @IBAction func btnRegietration(_ sender: UIButton) {
+        
+        let storyboard: UIStoryboard = UIStoryboard( name: "Main", bundle: nil )
+        
+        let newViewController = storyboard.instantiateViewController(withIdentifier: "Registration") as! Registration
+        
+        newViewController.modalPresentationStyle = .overFullScreen
+        self.present( newViewController, animated: true, completion: nil )
+        
+    }
     
     /*
     // MARK: - Navigation

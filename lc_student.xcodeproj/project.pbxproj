@@ -20,6 +20,7 @@
 		4D9E8B0D243DF780001B262D /* lc_studentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E8B0C243DF780001B262D /* lc_studentTests.swift */; };
 		4D9E8B18243DF780001B262D /* lc_studentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E8B17243DF780001B262D /* lc_studentUITests.swift */; };
 		4DAFBE56244C8CB80040C3D0 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAFBE55244C8CB80040C3D0 /* SignIn.swift */; };
+		4DCB8599245933BC001A7997 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DCB8598245933BC001A7997 /* Registration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		4D9E8B17243DF780001B262D /* lc_studentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lc_studentUITests.swift; sourceTree = "<group>"; };
 		4D9E8B19243DF780001B262D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DAFBE55244C8CB80040C3D0 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
+		4DCB8598245933BC001A7997 /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 		4D9E8AF4243DF77C001B262D /* lc_student */ = {
 			isa = PBXGroup;
 			children = (
+				4DCB85972459338D001A7997 /* Registration */,
 				4D1B37E42455E22B007E4DB6 /* service */,
 				4DAFBE54244C8C8B0040C3D0 /* signIn */,
 				4D5EB068244B66DC00B19EDC /* Menu */,
@@ -173,6 +176,14 @@
 				4DAFBE55244C8CB80040C3D0 /* SignIn.swift */,
 			);
 			path = signIn;
+			sourceTree = "<group>";
+		};
+		4DCB85972459338D001A7997 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				4DCB8598245933BC001A7997 /* Registration.swift */,
+			);
+			path = Registration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +321,7 @@
 				4D1B37E62455E2A6007E4DB6 /* ServiceRequest.swift in Sources */,
 				4D5EB061244B5C9C00B19EDC /* User.swift in Sources */,
 				4D5EB065244B5EEF00B19EDC /* UserModelController.swift in Sources */,
+				4DCB8599245933BC001A7997 /* Registration.swift in Sources */,
 				4D9E8AFA243DF77C001B262D /* ViewController.swift in Sources */,
 				4DAFBE56244C8CB80040C3D0 /* SignIn.swift in Sources */,
 				4D9E8AF6243DF77C001B262D /* AppDelegate.swift in Sources */,
