@@ -26,6 +26,8 @@ class SignIn: UIViewController {
         
         if let status_auth = jsonRequest[ "status" ]! as? Bool {
             if ( status_auth ) {
+                UserSettings.email = email.text!
+                
                 performSegue( withIdentifier: "signInGoMenu", sender: nil )
             } else {
                 print( "!!!!!!!!!" )

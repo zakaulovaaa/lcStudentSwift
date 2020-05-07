@@ -8,14 +8,14 @@
 
 import Foundation
 
-class UserModelController {
-    var user = User(
-                    is_authorized: false,
-                    idFrom1c: nil,
-                    lastName: nil,
-                    firstName: nil,
-                    middleName: nil,
-                    group: nil,
-                    lvl_access: nil
-    )
-}
+//class UserModelController {
+//    var user = User(
+//                    is_authorized: false,
+//                    idFrom1c: nil,
+//                    lastName: nil,
+//                    firstName: nil,
+//                    middleName: nil,
+//                    group: nil,
+//                    lvl_access: nil
+//    )
+//}
