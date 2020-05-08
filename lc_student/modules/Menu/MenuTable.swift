@@ -8,7 +8,30 @@
 
 import UIKit
 
+final class MenuItems: NSObject {
+    var name: String
+    
+    init( name: String ) {
+        self.name = name
+        
+        super.init()
+    }
+    
+}
+
+let menuItems = [ MenuItems(name: "Верификация"),
+                  MenuItems(name: "Личная карточка"),
+                  MenuItems(name: "Объявления"),
+                  MenuItems(name: "Расписание"),
+                  MenuItems(name: "Деканат"),
+                  MenuItems(name: "Домашние задания"),
+                  MenuItems(name: "Посещаемость"),
+                  MenuItems(name: "Выйти")
+                ]
+
 class MenuTable: UITableViewController {
+    
+    var items: [MenuItems] = menuItems
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,27 +43,46 @@ class MenuTable: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return items.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath)
+        
+        let item = items[indexPath.row] as MenuItems
+        cell.textLabel?.text = item.name
 
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let action = self.items[ indexPath.row ].name
+        if (action == "Выйти") {
+            UserSettings.email = nil
+            
+            
+            DispatchQueue.main.async(execute: {
+                let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                let newViewController = storyboard.instantiateViewController(withIdentifier: "FirstWindow") as! FirstWindow
+                newViewController.modalPresentationStyle = .overFullScreen
+                self.present(newViewController, animated: false, completion: nil)
+                
+            })
+            
+            
+            print( "!!!!!!!!!!!!" )
+        }
+//        print( self.items[indexPath.row].name )
+//        print(self.[indexPath.row])
+    }
 
     /*
     // Override to support conditional editing of the table view.
