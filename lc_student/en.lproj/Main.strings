@@ -1,0 +1,60 @@
+
+/* Class = "UIViewController"; title = "recoverThePassword"; ObjectID = "0fy-OT-IT4"; */
+"0fy-OT-IT4.title" = "recoverThePassword";
+
+/* Class = "UILabel"; text = "Восстановление пароля"; ObjectID = "0jc-3c-b17"; */
+"0jc-3c-b17.text" = "Восстановление пароля";
+
+/* Class = "UITextField"; placeholder = "email"; ObjectID = "4vv-Xl-7XD"; */
+"4vv-Xl-7XD.placeholder" = "email";
+
+/* Class = "UITextField"; placeholder = "пароль"; ObjectID = "7Xi-3x-N74"; */
+"7Xi-3x-N74.placeholder" = "пароль";
+
+/* Class = "UITextField"; placeholder = "password"; ObjectID = "7aU-Zi-18W"; */
+"7aU-Zi-18W.placeholder" = "password";
+
+/* Class = "UILabel"; text = "Войти"; ObjectID = "Dyu-7p-1uz"; */
+"Dyu-7p-1uz.text" = "Войти";
+
+/* Class = "UITableViewController"; title = "MenuTable"; ObjectID = "Hxt-lK-hJZ"; */
+"Hxt-lK-hJZ.title" = "MenuTable";
+
+/* Class = "UIButton"; normalTitle = "верни меня обратно"; ObjectID = "JAF-du-FBo"; */
+"JAF-du-FBo.normalTitle" = "верни меня обратно";
+
+/* Class = "UITextField"; placeholder = "email"; ObjectID = "P9j-Ve-ZtF"; */
+"P9j-Ve-ZtF.placeholder" = "email";
+
+/* Class = "UIButton"; normalTitle = "Регистрация"; ObjectID = "RcN-g0-o4Y"; */
+"RcN-g0-o4Y.normalTitle" = "Регистрация";
+
+/* Class = "UIButton"; normalTitle = "Зарегистрироваться"; ObjectID = "a4z-e5-5sN"; */
+"a4z-e5-5sN.normalTitle" = "Зарегистрироваться";
+
+/* Class = "UITextField"; placeholder = "пароль еще раз"; ObjectID = "bK6-dL-s2r"; */
+"bK6-dL-s2r.placeholder" = "пароль еще раз";
+
+/* Class = "UIButton"; normalTitle = "sign in"; ObjectID = "fLJ-2x-2b4"; */
+"fLJ-2x-2b4.normalTitle" = "sign in";
+
+/* Class = "UILabel"; text = "Меню"; ObjectID = "hoH-Ss-Zc3"; */
+"hoH-Ss-Zc3.text" = "Меню";
+
+/* Class = "UIButton"; normalTitle = "Забыл пароль?"; ObjectID = "ihK-0N-YeM"; */
+"ihK-0N-YeM.normalTitle" = "Забыл пароль?";
+
+/* Class = "UIViewController"; title = "signIn"; ObjectID = "j4V-4K-Dy6"; */
+"j4V-4K-Dy6.title" = "signIn";
+
+/* Class = "UIButton"; normalTitle = "Восстановить"; ObjectID = "mZ2-Hf-nIa"; */
+"mZ2-Hf-nIa.normalTitle" = "Восстановить";
+
+/* Class = "UIButton"; normalTitle = "Обратно"; ObjectID = "q4l-jr-HaO"; */
+"q4l-jr-HaO.normalTitle" = "Обратно";
+
+/* Class = "UITextField"; placeholder = "email"; ObjectID = "tzY-8p-mJk"; */
+"tzY-8p-mJk.placeholder" = "email";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "uEJ-oF-0IK"; */
+"uEJ-oF-0IK.text" = "Title";

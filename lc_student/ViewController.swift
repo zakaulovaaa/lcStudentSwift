@@ -15,8 +15,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
 //        let is_authorized = userModelController.user.is_authorized
         
         print( UserSettings.email ?? "нету" )

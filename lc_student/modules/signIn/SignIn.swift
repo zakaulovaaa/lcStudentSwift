@@ -1,16 +1,22 @@
 import UIKit
 
 
-class SignIn: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+class SignIn: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var warning: UILabel!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        email.delegate = self
+        password.delegate = self
+    }
+    /*
+     * TODO: ДАША НЕ ЗАБУДЬ ПОМЕНЯТЬ
+     */
+    let ADDRESS: String = "http://192.168.1.185:8000/"
     @IBAction func btnSignIn(_ sender: Any) {
         
         let jsonObject: [String: Any] = [
@@ -18,8 +24,11 @@ class SignIn: UIViewController {
             "password": password.text!
         ]
         
-        let jsonRequest: [String : Any] = requestMain( urlStr: "http://localhost:8000/sign_in/",
-                    jsonBody: jsonObject
+        print("DAROVA")
+        
+        let jsonRequest: [String : Any] = requestMain(
+            urlStr: ADDRESS + "sign_in/",
+            jsonBody: jsonObject
         )
         
         print( jsonRequest )
@@ -38,6 +47,16 @@ class SignIn: UIViewController {
                 
             }
         }
+    }
+        
+    func hideKeyBoardInLoginScreen() {
+        email.resignFirstResponder()
+        password.resignFirstResponder()
+    }
+
+    func textFieldShouldReturn(_ textField : UITextField) -> Bool {
+        hideKeyBoardInLoginScreen()
+        return true
     }
 
     
