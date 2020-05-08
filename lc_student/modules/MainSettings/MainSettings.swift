@@ -30,12 +30,16 @@ class MainSettings: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+//
+//    @IBAction func toMenu(_ sender: UIButton) {
+//        dismiss(animated: true, completion: nil)
+//    }
     
-    @IBAction func toMenu(_ sender: UIButton) {
+    @IBAction func toMenu(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
+        
     }
     
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
