@@ -62,11 +62,34 @@
                     <navigationItem key="navigationItem" id="CC9-IN-8Zq"/>
                     <connections>
                         <segue destination="kti-PH-qtx" kind="show" identifier="MenuToSettings" id="hXS-tc-g6k"/>
+                        <segue destination="Xke-iz-ao8" kind="show" identifier="ToVerification" id="ZlN-Dn-hnZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Drg-Tq-dCL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1478" y="647"/>
+        </scene>
+        <!--Verification-->
+        <scene sceneID="PKY-SB-NEQ">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="o22-cy-M50" customClass="Verification" customModule="lc_student" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qh3-dy-NzP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="BQc-Y0-IeE"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gme-sv-IQ0">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="wRB-Er-CSm">
+                            <connections>
+                                <action selector="toMenu:" destination="o22-cy-M50" id="Ky3-Md-EnB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BSY-bO-2c3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2847.826086956522" y="1384.8214285714284"/>
         </scene>
         <!--MainSettings-->
         <scene sceneID="FxI-5G-3Oz">
@@ -336,6 +359,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bch-PH-y3b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1937.68115942029" y="-154.01785714285714"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HdJ-wi-RYm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="Xke-iz-ao8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Dy5-i7-RB7"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f9f-eK-OGA">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="o22-cy-M50" kind="relationship" relationship="rootViewController" id="B2H-GL-oTk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qp4-aP-MNs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1937.68115942029" y="1384.8214285714284"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

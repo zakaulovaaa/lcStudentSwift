@@ -61,6 +61,9 @@ class MenuTable: UITableViewController {
             performSegue( withIdentifier: "MenuToSettings", sender: nil )
             
         }
+        if (action == "Верификация") {
+            performSegue(withIdentifier: "ToVerification", sender: nil)
+        }
         
 //        print( self.items[indexPath.row].name )
 //        print(self.[indexPath.row])
