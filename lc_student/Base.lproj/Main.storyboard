@@ -61,8 +61,12 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="CC9-IN-8Zq"/>
                     <connections>
-                        <segue destination="kti-PH-qtx" kind="show" identifier="MenuToSettings" id="hXS-tc-g6k"/>
+
+                       
                         <segue destination="Xke-iz-ao8" kind="show" identifier="ToVerification" id="ZlN-Dn-hnZ"/>
+
+                        <segue destination="uDC-qg-0Vt" kind="show" identifier="MenuToSettings" id="hXS-tc-g6k"/>
+
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Drg-Tq-dCL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -96,42 +100,12 @@
             <objects>
                 <tableViewController title="MainSettings" modalPresentationStyle="fullScreen" id="kti-PH-qtx" customClass="MainSettings" customModule="lc_student" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Vm6-2x-o7D">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" id="PTT-hp-YOJ">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="122"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Frv-vI-BLb">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="37.5"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wK1-Nw-t78">
-                                            <rect key="frame" x="0.0" y="0.0" width="207" height="37.5"/>
-                                            <inset key="titleEdgeInsets" minX="7" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <inset key="imageEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                            <state key="normal" title=" В меню" image="arrowshape.turn.up.left" catalog="system"/>
-                                            <connections>
-                                                <action selector="toMenu:" destination="kti-PH-qtx" eventType="touchUpInside" id="QrH-JK-KWh"/>
-                                            </connections>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ay1-zd-xVf">
-                                            <rect key="frame" x="207" y="0.0" width="207" height="37.5"/>
-                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
-                                        </button>
-                                    </subviews>
-                                </stackView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Настройки" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w47-nR-R24">
-                                    <rect key="frame" x="0.0" y="37.5" width="414" height="84.5"/>
-                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="45"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                        </stackView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SettingsCell" textLabel="hKV-3x-Yqg" rowHeight="111" style="IBUITableViewCellStyleDefault" id="Uwd-Gt-SSJ">
-                                <rect key="frame" x="0.0" y="150" width="414" height="111"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="111"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uwd-Gt-SSJ" id="JHF-ei-SBn">
                                     <rect key="frame" x="0.0" y="0.0" width="383" height="111"/>
@@ -153,10 +127,17 @@
                             <outlet property="delegate" destination="kti-PH-qtx" id="XEM-sP-jEQ"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="IQh-UI-sbb">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="riX-7j-p6y">
+                            <connections>
+                                <action selector="toMenu:" destination="kti-PH-qtx" id="XfE-6l-hPr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0N-qa-zH4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2387" y="647"/>
+            <point key="canvasLocation" x="3455.072463768116" y="646.875"/>
         </scene>
         <!--recoverThePassword-->
         <scene sceneID="Q7E-mF-QjF">
@@ -361,29 +342,30 @@
             <point key="canvasLocation" x="1937.68115942029" y="-154.01785714285714"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="HdJ-wi-RYm">
+
+        <scene sceneID="IeC-MS-mQm">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="Xke-iz-ao8" sceneMemberID="viewController">
+                <navigationController wantsFullScreenLayout="YES" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="uDC-qg-0Vt" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="Dy5-i7-RB7"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="f9f-eK-OGA">
+                    <navigationItem key="navigationItem" id="DWN-g5-NHL"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7pR-pU-eQr">
+
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="o22-cy-M50" kind="relationship" relationship="rootViewController" id="B2H-GL-oTk"/>
+
+                        <segue destination="kti-PH-qtx" kind="relationship" relationship="rootViewController" id="8NB-O6-CuJ"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qp4-aP-MNs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bcT-84-bJN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1937.68115942029" y="1384.8214285714284"/>
+            <point key="canvasLocation" x="2544.9275362318845" y="646.875"/>
+
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="eTa-y4-kCp"/>
     </inferredMetricsTieBreakers>
-    <resources>
-        <image name="arrowshape.turn.up.left" catalog="system" width="128" height="106"/>
-    </resources>
 </document>
