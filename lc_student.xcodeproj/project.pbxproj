@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26DD172F246599A500430358 /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DD172E246599A500430358 /* Verification.swift */; };
 		4D1B37E62455E2A6007E4DB6 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B37E52455E2A6007E4DB6 /* ServiceRequest.swift */; };
 		4D5EB061244B5C9C00B19EDC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5EB060244B5C9C00B19EDC /* User.swift */; };
 		4D5EB065244B5EEF00B19EDC /* UserModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5EB064244B5EEF00B19EDC /* UserModelController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26DD172E246599A500430358 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
 		4D1B37E52455E2A6007E4DB6 /* ServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
 		4D5EB060244B5C9C00B19EDC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4D5EB064244B5EEF00B19EDC /* UserModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelController.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		26DD172D2465994F00430358 /* Verification */ = {
+			isa = PBXGroup;
+			children = (
+				26DD172E246599A500430358 /* Verification.swift */,
+			);
+			path = Verification;
+			sourceTree = "<group>";
+		};
 		4D1B37E42455E22B007E4DB6 /* service */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +212,7 @@
 		4DFAC546245E7E0A007AD97C /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				26DD172D2465994F00430358 /* Verification */,
 				4DE956052465862900FD510E /* MainSettings */,
 				4DFAC547245E7E56007AD97C /* recoverThePassword */,
 				4D5EB068244B66DC00B19EDC /* Menu */,
@@ -350,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26DD172F246599A500430358 /* Verification.swift in Sources */,
 				4D1B37E62455E2A6007E4DB6 /* ServiceRequest.swift in Sources */,
 				4D5EB061244B5C9C00B19EDC /* User.swift in Sources */,
 				4D5EB065244B5EEF00B19EDC /* UserModelController.swift in Sources */,
