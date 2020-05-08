@@ -1,6 +1,14 @@
+//
+//  MainSettings.swift
+//  lc_student
+//
+//  Created by Дарья Закаулова on 08.05.2020.
+//  Copyright © 2020 Дарья Закаулова. All rights reserved.
+//
+
 import UIKit
 
-final class MenuItems: NSObject {
+final class SettingsItems: NSObject {
     var name: String
     
     init( name: String ) {
@@ -8,48 +16,46 @@ final class MenuItems: NSObject {
         
         super.init()
     }
-    
 }
 
-let menuItems = [ MenuItems(name: "Верификация"),
-                  MenuItems(name: "Личная карточка"),
-                  MenuItems(name: "Объявления"),
-                  MenuItems(name: "Расписание"),
-                  MenuItems(name: "Деканат"),
-                  MenuItems(name: "Домашние задания"),
-                  MenuItems(name: "Посещаемость"),
-                  MenuItems(name: "Настройки")
-                ]
+let settingsItems = [ SettingsItems( name: "Пункт меню" ),
+                      SettingsItems( name: "Выйти" )
+                    ]
 
-class MenuTable: UITableViewController {
+
+class MainSettings: UITableViewController {
     
-    var items: [MenuItems] = menuItems
+    var items: [SettingsItems] = settingsItems
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+    @IBAction func toMenu(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 
+    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
         return items.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath)
-        
-        let item = items[indexPath.row] as MenuItems
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath)
+
+        let item = items[indexPath.row] as SettingsItems
         cell.textLabel?.text = item.name
+        
+        // Configure the cell...
 
         return cell
     }
@@ -57,14 +63,22 @@ class MenuTable: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let action = self.items[ indexPath.row ].name
         
-        if (action == "Настройки") {
-            performSegue( withIdentifier: "MenuToSettings", sender: nil )
+        if (action == "Выйти") {
+            UserSettings.email = nil
+            DispatchQueue.main.async(execute: {
+                let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                let newViewController = storyboard.instantiateViewController(withIdentifier: "FirstWindow") as! FirstWindow
+                newViewController.modalPresentationStyle = .overFullScreen
+                self.present(newViewController, animated: false, completion: nil)
+                
+            })
             
+            
+            print( "!!!!!!!!!!!!" )
         }
-        
-//        print( self.items[indexPath.row].name )
-//        print(self.[indexPath.row])
     }
+    
 
     /*
     // Override to support conditional editing of the table view.

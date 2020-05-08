@@ -20,6 +20,7 @@
 		4D9E8B18243DF780001B262D /* lc_studentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E8B17243DF780001B262D /* lc_studentUITests.swift */; };
 		4DAFBE56244C8CB80040C3D0 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DAFBE55244C8CB80040C3D0 /* SignIn.swift */; };
 		4DE9560424651B3F00FD510E /* FirstWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE9560324651B3F00FD510E /* FirstWindow.swift */; };
+		4DE956072465869900FD510E /* MainSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE956062465869900FD510E /* MainSettings.swift */; };
 		4DFAC543245DB439007AD97C /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFAC542245DB439007AD97C /* Registration.swift */; };
 		4DFAC549245E7EE4007AD97C /* RecoverThePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFAC548245E7EE4007AD97C /* RecoverThePassword.swift */; };
 		4DFAC54B245EC2A3007AD97C /* MenuTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DFAC54A245EC2A3007AD97C /* MenuTable.swift */; };
@@ -62,6 +63,7 @@
 		4D9E8B19243DF780001B262D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4DAFBE55244C8CB80040C3D0 /* SignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		4DE9560324651B3F00FD510E /* FirstWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstWindow.swift; sourceTree = "<group>"; };
+		4DE956062465869900FD510E /* MainSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettings.swift; sourceTree = "<group>"; };
 		4DFAC542245DB439007AD97C /* Registration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		4DFAC548245E7EE4007AD97C /* RecoverThePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoverThePassword.swift; sourceTree = "<group>"; };
 		4DFAC54A245EC2A3007AD97C /* MenuTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTable.swift; sourceTree = "<group>"; };
@@ -189,9 +191,18 @@
 			path = Registration;
 			sourceTree = "<group>";
 		};
+		4DE956052465862900FD510E /* MainSettings */ = {
+			isa = PBXGroup;
+			children = (
+				4DE956062465869900FD510E /* MainSettings.swift */,
+			);
+			path = MainSettings;
+			sourceTree = "<group>";
+		};
 		4DFAC546245E7E0A007AD97C /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				4DE956052465862900FD510E /* MainSettings */,
 				4DFAC547245E7E56007AD97C /* recoverThePassword */,
 				4D5EB068244B66DC00B19EDC /* Menu */,
 				4DAFBE54244C8C8B0040C3D0 /* signIn */,
@@ -346,6 +357,7 @@
 				4DFAC549245E7EE4007AD97C /* RecoverThePassword.swift in Sources */,
 				4DAFBE56244C8CB80040C3D0 /* SignIn.swift in Sources */,
 				4D9E8AF6243DF77C001B262D /* AppDelegate.swift in Sources */,
+				4DE956072465869900FD510E /* MainSettings.swift in Sources */,
 				4DFAC543245DB439007AD97C /* Registration.swift in Sources */,
 				4DE9560424651B3F00FD510E /* FirstWindow.swift in Sources */,
 				4D9E8AF8243DF77C001B262D /* SceneDelegate.swift in Sources */,
