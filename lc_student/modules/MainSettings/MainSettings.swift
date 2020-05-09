@@ -8,17 +8,18 @@
 
 import UIKit
 
-final class SettingsItems: NSObject {
+//класс пунктов меню
+final class SettingsItems: NSObject { 
     var name: String
     
     init( name: String ) {
         self.name = name
-        
         super.init()
     }
 }
 
-let settingsItems = [ SettingsItems( name: "Пункт меню" ),
+//объявляем ВСЕ пункты, которые могут отображаться
+let settingsItems = [ SettingsItems( name: "Сменить пароль" ),
                       SettingsItems( name: "Выйти" )
                     ]
 
@@ -30,43 +31,35 @@ class MainSettings: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-//
-//    @IBAction func toMenu(_ sender: UIButton) {
-//        dismiss(animated: true, completion: nil)
-//    }
     
+    //переход в меню
     @IBAction func toMenu(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
-        
     }
-    
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return items.count
     }
 
-    
+    //отрисовка пунктов меню
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath)
 
         let item = items[indexPath.row] as SettingsItems
         cell.textLabel?.text = item.name
-        
-        // Configure the cell...
 
         return cell
     }
     
+    //обработка клика на пункт меню
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let action = self.items[ indexPath.row ].name
         
+        //обработка выхода из аккаунта
         if (action == "Выйти") {
             UserSettings.email = nil
             DispatchQueue.main.async(execute: {
@@ -77,9 +70,11 @@ class MainSettings: UITableViewController {
                 self.present(newViewController, animated: false, completion: nil)
                 
             })
-            
-            
-            print( "!!!!!!!!!!!!" )
+        }
+        
+        
+        if (action == "Сменить пароль") {
+            performSegue( withIdentifier: "ToChangePassword", sender: nil )
         }
     }
     

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		26DD172F246599A500430358 /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DD172E246599A500430358 /* Verification.swift */; };
 		4D1B37E62455E2A6007E4DB6 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B37E52455E2A6007E4DB6 /* ServiceRequest.swift */; };
+		4D4DED4024664858008AD13C /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4DED3F24664858008AD13C /* ChangePassword.swift */; };
 		4D5EB061244B5C9C00B19EDC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5EB060244B5C9C00B19EDC /* User.swift */; };
 		4D5EB065244B5EEF00B19EDC /* UserModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5EB064244B5EEF00B19EDC /* UserModelController.swift */; };
 		4D9E8AF6243DF77C001B262D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E8AF5243DF77C001B262D /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		26DD172E246599A500430358 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
 		4D1B37E52455E2A6007E4DB6 /* ServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
+		4D4DED3F24664858008AD13C /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 		4D5EB060244B5C9C00B19EDC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4D5EB064244B5EEF00B19EDC /* UserModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModelController.swift; sourceTree = "<group>"; };
 		4D9E8AF2243DF77C001B262D /* lc_student.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lc_student.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +112,14 @@
 				4D1B37E52455E2A6007E4DB6 /* ServiceRequest.swift */,
 			);
 			path = service;
+			sourceTree = "<group>";
+		};
+		4D4DED3E24664826008AD13C /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				4D4DED3F24664858008AD13C /* ChangePassword.swift */,
+			);
+			path = ChangePassword;
 			sourceTree = "<group>";
 		};
 		4D5EB05F244B5C6100B19EDC /* StatusUser */ = {
@@ -212,6 +222,7 @@
 		4DFAC546245E7E0A007AD97C /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				4D4DED3E24664826008AD13C /* ChangePassword */,
 				26DD172D2465994F00430358 /* Verification */,
 				4DE956052465862900FD510E /* MainSettings */,
 				4DFAC547245E7E56007AD97C /* recoverThePassword */,
@@ -367,6 +378,7 @@
 				4D5EB065244B5EEF00B19EDC /* UserModelController.swift in Sources */,
 				4D9E8AFA243DF77C001B262D /* ViewController.swift in Sources */,
 				4DFAC549245E7EE4007AD97C /* RecoverThePassword.swift in Sources */,
+				4D4DED4024664858008AD13C /* ChangePassword.swift in Sources */,
 				4DAFBE56244C8CB80040C3D0 /* SignIn.swift in Sources */,
 				4D9E8AF6243DF77C001B262D /* AppDelegate.swift in Sources */,
 				4DE956072465869900FD510E /* MainSettings.swift in Sources */,

@@ -10,9 +10,9 @@ import UIKit
 
 class Verification: UIViewController, UITextFieldDelegate {
     
-    let ADDRESS: String = "http://192.168.1.185:8000/" // ДЛЯ ДИМЫ
+//    let ADDRESS: String = "http://192.168.1.185:8000/" // ДЛЯ ДИМЫ
     
-//    let ADDRESS: String = "http://localhost:8000/" //ДЛЯ ДАШИ
+    let ADDRESS: String = "http://localhost:8000/" //ДЛЯ ДАШИ
 
     @IBOutlet weak var dataField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -95,6 +95,7 @@ class Verification: UIViewController, UITextFieldDelegate {
            urlStr: ADDRESS + "who_is/",
            jsonBody: jsonObject
         )
+        
         //Это для вылезания алерта
         let alert = UIAlertController(title: "Статус верификации", message: "Данные были отправлены", preferredStyle: .alert)
         if let status_auth = jsonRequest[ "status" ]! as? Bool {
