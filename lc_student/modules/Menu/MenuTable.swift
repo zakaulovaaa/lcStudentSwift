@@ -11,14 +11,14 @@ final class MenuItems: NSObject {
     
 }
 
-let menuItems = [ MenuItems(name: "Верификация"),
-                  MenuItems(name: "Личная карточка"),
-                  MenuItems(name: "Объявления"),
-                  MenuItems(name: "Расписание"),
-                  MenuItems(name: "Деканат"),
-                  MenuItems(name: "Домашние задания"),
-                  MenuItems(name: "Посещаемость"),
-                  MenuItems(name: "Настройки")
+let menuItems = [ MenuItems(name: "Верификация"),           //Только не верифицированным
+                  MenuItems(name: "Личная карточка"),       //только верифицированным
+                  MenuItems(name: "Объявления"),            //только верифицированным
+                  MenuItems(name: "Расписание"),            //всем (убрать)
+                  MenuItems(name: "Деканат"),               //только верифицированным
+                  MenuItems(name: "Домашние задания"),      //только верифицированным
+                  MenuItems(name: "Посещаемость"),          //только верифицированным
+                  MenuItems(name: "Настройки")              //всем
                 ]
 
 class MenuTable: UITableViewController {

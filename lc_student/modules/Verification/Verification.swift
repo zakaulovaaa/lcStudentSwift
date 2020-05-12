@@ -10,9 +10,12 @@ import UIKit
 
 class Verification: UIViewController, UITextFieldDelegate {
     
-//    let ADDRESS: String = "http://192.168.1.185:8000/" // ДЛЯ ДИМЫ
+    let ADDRESS: String = "http://192.168.1.185:8000/" // ДЛЯ ДИМЫ
     
-    let ADDRESS: String = "http://localhost:8000/" //ДЛЯ ДАШИ
+ //   let ADDRESS: String = "http://localhost:8000/" //ДЛЯ ДАШИ
+    func printUserModel(user: UserModel) {
+        print( "\n\n\nemail = \(user.email) \nlastName = \(user.lastName!) \nfirstName = \(user.firstName!) \nmiddleName = \(user.middleName!) \nisVerified = \(user.isVerified)" )
+    }
 
     @IBOutlet weak var dataField: UITextField!
     @IBOutlet weak var emailField: UITextField!
@@ -92,17 +95,46 @@ class Verification: UIViewController, UITextFieldDelegate {
             "last_numbers_passport":    passportField.text!
         ]
         let jsonRequest: [String : Any] = requestMain(
-           urlStr: ADDRESS + "who_is/",
+           urlStr: ADDRESS + "verification/",
            jsonBody: jsonObject
         )
         
         //Это для вылезания алерта
         let alert = UIAlertController(title: "Статус верификации", message: "Данные были отправлены", preferredStyle: .alert)
+        
         if let status_auth = jsonRequest[ "status" ]! as? Bool {
             if ( status_auth ) {
+                //Здесь добавляем отчет в алерте
                 alert.addAction(UIAlertAction(title: "Успех!", style: .default, handler: nil))
-            } else {
-                alert.addAction(UIAlertAction(title: "Провал :(", style: .default, handler: nil))
+                var lastName = "", firstName = "", middleName = ""
+                var email = UserSettings.userModel.email
+                var isVerified: Bool = false
+                
+                if let cnt = jsonRequest[ "last_name" ] as? String {
+                    lastName = cnt
+                }
+                if let cnt = jsonRequest[ "first_name" ] as? String {
+                    firstName = cnt
+                }
+                if let cnt = jsonRequest[ "middle_name" ] as? String {
+                    middleName = cnt
+                }
+                if let cnt = jsonRequest[ "is_verificated" ] as? Bool {
+                    isVerified = cnt
+                    print("ASDASDSA: ", cnt)
+                }
+                //UserSettings.userModel.email
+                let user: UserModel = UserModel( email: email,
+                                                 isVerified: isVerified,
+                                                 lastName: lastName,
+                                                 firstName: firstName,
+                                                 middleName: middleName,
+                                                 studentsGroup: [] )
+                
+                UserSettings.userModel = user
+                
+                printUserModel(user: UserSettings.userModel)
+                
             }
         }
         self.present(alert, animated: true)
