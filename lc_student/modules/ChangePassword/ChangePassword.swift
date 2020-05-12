@@ -24,8 +24,7 @@ class ChangePassword: UIViewController {
         
     }
     
-    
-    
+
     
     //при нажатии на кнопку сменить
     @IBAction func changePassword(_ sender: Any) {
@@ -42,7 +41,7 @@ class ChangePassword: UIViewController {
         
         if ( check ) {
             let jsonObject: [String: Any] = [
-                "email": UserSettings.email!,
+                "email": UserSettings.userModel.email,
                 "current_password": oldPassword.text!,
                 "new_password": newPassword1.text!
             ]

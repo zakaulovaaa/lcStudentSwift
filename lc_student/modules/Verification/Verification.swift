@@ -26,7 +26,7 @@ class Verification: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         //Заполняем поле с почтой по умолчанию
-        emailField.text = UserSettings.email
+        emailField.text = UserSettings.userModel.email
         
         //В поле с водом текста присваиваем дата пикер, сразу будет вылазить спинер с датой
         dataField.inputView = datePicker
@@ -100,9 +100,7 @@ class Verification: UIViewController, UITextFieldDelegate {
         let alert = UIAlertController(title: "Статус верификации", message: "Данные были отправлены", preferredStyle: .alert)
         if let status_auth = jsonRequest[ "status" ]! as? Bool {
             if ( status_auth ) {
-                
                 alert.addAction(UIAlertAction(title: "Успех!", style: .default, handler: nil))
-                
             } else {
                 alert.addAction(UIAlertAction(title: "Провал :(", style: .default, handler: nil))
             }

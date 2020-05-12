@@ -13,9 +13,10 @@ class FirstWindow: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print( UserSettings.email ?? "нету" )
+        print( UserSettings.userModel ?? "нету" )
         
-        if UserSettings.email != nil {
+        if UserSettings.userModel != nil {
+            
             print("!!!!!")
             DispatchQueue.main.async(execute: {
                 let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -25,6 +26,7 @@ class FirstWindow: UINavigationController {
                 newViewController.modalPresentationStyle = .overFullScreen
                 self.present(newViewController, animated: true, completion: nil)
             })
+            
         } else {
             DispatchQueue.main.async(execute: {
                 let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)

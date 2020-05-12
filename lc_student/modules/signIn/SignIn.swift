@@ -13,12 +13,21 @@ class SignIn: UIViewController, UITextFieldDelegate {
         email.delegate = self
         password.delegate = self
     }
+    
     /*
      * TODO: ДАША НЕ ЗАБУДЬ ПОМЕНЯТЬ
      */
+    
 //    let ADDRESS: String = "http://192.168.1.185:8000/" // ДЛЯ ДИМЫ
     
     let ADDRESS: String = "http://localhost:8000/" //ДЛЯ ДАШИ
+    
+    
+    func printUserModel(user: UserModel) {
+        print( "\n\n\nemail = \(user.email) \nlastName = \(user.lastName!) \nfirstName = \(user.firstName!) \nmiddleName = \(user.middleName!) \nisVerified = \(user.isVerified)" )
+    }
+    
+    
     
     @IBAction func btnSignIn(_ sender: Any) {
         
@@ -27,18 +36,45 @@ class SignIn: UIViewController, UITextFieldDelegate {
             "password": password.text!
         ]
         
-        print("DAROVA")
         
         let jsonRequest: [String : Any] = requestMain(
             urlStr: ADDRESS + "sign_in/",
             jsonBody: jsonObject
         )
         
-        print( jsonRequest )
+//        print( jsonRequest )
         
         if let status_auth = jsonRequest[ "status" ]! as? Bool {
             if ( status_auth ) {
-                UserSettings.email = email.text!
+                
+                var lastName = "", firstName = "", middleName = ""
+                var isVerified: Bool = false
+                
+                if let cnt = jsonRequest[ "last_name" ] as? String {
+                    lastName = cnt
+                }
+                if let cnt = jsonRequest[ "first_name" ] as? String {
+                    firstName = cnt
+                }
+                if let cnt = jsonRequest[ "middle_name" ] as? String {
+                    middleName = cnt
+                }
+                if let cnt = jsonRequest[ "is_verificated" ] as? Bool {
+                    isVerified = cnt
+                }
+
+                let user: UserModel = UserModel( email: email.text!,
+                                                 isVerified: isVerified,
+                                                 lastName: lastName,
+                                                 firstName: firstName,
+                                                 middleName: middleName,
+                                                 studentsGroup: [] )
+                
+                UserSettings.userModel = user
+                
+                printUserModel(user: UserSettings.userModel)
+                
+//                UserSettings.email = email.text!
                 
                 performSegue( withIdentifier: "signInGoMenu", sender: nil )
             } else {

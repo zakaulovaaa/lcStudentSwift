@@ -61,7 +61,7 @@ class MainSettings: UITableViewController {
         
         //обработка выхода из аккаунта
         if (action == "Выйти") {
-            UserSettings.email = nil
+            UserSettings.userModel = nil
             DispatchQueue.main.async(execute: {
                 let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 
