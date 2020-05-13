@@ -61,6 +61,17 @@ class Registration: UIViewController {
                         warning.text = message
                     }
                 } else {
+                    
+                    let user: UserModel = UserModel( email: email.text!,
+                                                     isVerified: false,
+                                                     lastName: "",
+                                                     firstName: "",
+                                                     middleName: "",
+                                                     studentsGroup: [] )
+                    
+                    UserSettings.userModel = user
+                    
+                    
                     performSegue( withIdentifier: "registerGoMenu", sender: nil )
                 }
             }

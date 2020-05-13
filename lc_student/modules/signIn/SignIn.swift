@@ -18,9 +18,9 @@ class SignIn: UIViewController, UITextFieldDelegate {
      * TODO: ДАША НЕ ЗАБУДЬ ПОМЕНЯТЬ
      */
     
-    let ADDRESS: String = "http://192.168.1.185:8000/" // ДЛЯ ДИМЫ
+//    let ADDRESS: String = "http://192.168.1.185:8000/" // ДЛЯ ДИМЫ
     
-  //  let ADDRESS: String = "http://localhost:8000/" //ДЛЯ ДАШИ
+    let ADDRESS: String = "http://localhost:8000/" //ДЛЯ ДАШИ
     
     
     func printUserModel(user: UserModel) {
@@ -42,7 +42,7 @@ class SignIn: UIViewController, UITextFieldDelegate {
             jsonBody: jsonObject
         )
         
-//        print( jsonRequest )
+        print( jsonRequest )
         
         if let status_auth = jsonRequest[ "status" ]! as? Bool {
             if ( status_auth ) {
@@ -74,7 +74,6 @@ class SignIn: UIViewController, UITextFieldDelegate {
                 
                 printUserModel(user: UserSettings.userModel)
                 
-//                UserSettings.email = email.text!
                 
                 performSegue( withIdentifier: "signInGoMenu", sender: nil )
             } else {

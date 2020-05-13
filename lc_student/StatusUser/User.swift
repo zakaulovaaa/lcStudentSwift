@@ -41,7 +41,7 @@ class UserModel: NSObject, NSCoding {
     }
     
     required init?(coder: NSCoder) {
-        isVerified = coder.decodeObject(forKey: "isVerified") as? Bool ?? false
+        isVerified = coder.decodeBool(forKey: "isVerified")
         email = coder.decodeObject(forKey: "email") as? String ?? ""
         lastName = coder.decodeObject(forKey: "lastName") as? String ?? ""
         firstName = coder.decodeObject(forKey: "firstName") as? String ?? ""
@@ -69,7 +69,7 @@ final class UserSettings {
             let key = SettingsKeys.userModel.rawValue
             if let userModel = newValue {
                 if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: userModel, requiringSecureCoding: false) {
-                    defaults.set(savedData, forKey: key)
+                    defaults.set( savedData, forKey: key )
                 }
             } else {
                 defaults.removeObject(forKey: key)

@@ -10,9 +10,9 @@ import UIKit
 
 class Verification: UIViewController, UITextFieldDelegate {
     
-    let ADDRESS: String = "http://192.168.1.185:8000/" // ДЛЯ ДИМЫ
+//    let ADDRESS: String = "http://192.168.1.185:8000/" // ДЛЯ ДИМЫ
     
- //   let ADDRESS: String = "http://localhost:8000/" //ДЛЯ ДАШИ
+    let ADDRESS: String = "http://localhost:8000/" //ДЛЯ ДАШИ
     func printUserModel(user: UserModel) {
         print( "\n\n\nemail = \(user.email) \nlastName = \(user.lastName!) \nfirstName = \(user.firstName!) \nmiddleName = \(user.middleName!) \nisVerified = \(user.isVerified)" )
     }

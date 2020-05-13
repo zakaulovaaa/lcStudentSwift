@@ -25,7 +25,15 @@ class MenuTable: UITableViewController {
     
     var items: [MenuItems] = menuItems
 
+    func printUserModel(user: UserModel) {
+        print( "\n\n\nemail = \(user.email) \nlastName = \(user.lastName!) \nfirstName = \(user.firstName!) \nmiddleName = \(user.middleName!) \nisVerified = \(user.isVerified)" )
+    }
+    
     override func viewDidLoad() {
+        
+        printUserModel(user: UserSettings.userModel)
+        
+        
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
