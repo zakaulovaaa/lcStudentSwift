@@ -34,22 +34,16 @@ class SignIn: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
-    
     @IBAction func btnSignIn(_ sender: Any) {
         
         let jsonObject: [String: Any] = [
             "email": email.text!,
             "password": password.text!
         ]
-        
-        
         let jsonRequest: [String : Any] = requestMain(
             urlStr: ADDRESS + "sign_in/",
             jsonBody: jsonObject
         )
-        
-//        print( jsonRequest )
         
         if let status_auth = jsonRequest[ "status" ]! as? Bool {
             if ( status_auth ) {
@@ -84,9 +78,7 @@ class SignIn: UIViewController, UITextFieldDelegate {
                                                  studentsGroup: groups )
                 
                 UserSettings.userModel = user
-                
                 printUserModel(user: UserSettings.userModel)
-                
                 performSegue( withIdentifier: "signInGoMenu", sender: nil )
             } else {
                 if let message = jsonRequest[ "comment" ] as? String {
@@ -109,15 +101,3 @@ class SignIn: UIViewController, UITextFieldDelegate {
     
 
 }
-
-
-
-
-
-
-/*
- 
-
- 
- 
- */

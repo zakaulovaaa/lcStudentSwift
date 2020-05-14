@@ -23,9 +23,6 @@ class ChangePassword: UIViewController {
         super.viewDidLoad()
         
     }
-    
-
-    
     //при нажатии на кнопку сменить
     @IBAction func changePassword(_ sender: Any) {
         var check: Bool = true
@@ -38,20 +35,18 @@ class ChangePassword: UIViewController {
             warning.text += "\nВведенные пароли не совпадают"
             check = false
         }
-        
         if ( check ) {
-            let jsonObject: [String: Any] = [
+            let jsonObject: [ String: Any ] = [
                 "email": UserSettings.userModel.email,
                 "current_password": oldPassword.text!,
                 "new_password": newPassword1.text!
             ]
-            
-            let jsonRequest: [String: Any] = requestMain(urlStr: ADDRESS + "actions_with_password/change/",
-                                                         jsonBody: jsonObject)
-            
+            let jsonRequest: [ String: Any ] = requestMain(
+                urlStr: ADDRESS + "actions_with_password/change/",
+                jsonBody: jsonObject
+            )
             if let status = jsonRequest[ "status" ] as? Bool {
                 if ( !status ) {
-                    
                     if let message = jsonRequest[ "comment" ] as? String {
                         warning.text = message
                     }
@@ -59,21 +54,13 @@ class ChangePassword: UIViewController {
                     let alert = UIAlertController(title: "Смена пароля",
                                                   message: "Смена пароля прошла успешно!",
                                                   preferredStyle: .alert)
-                    
                     alert.addAction(UIAlertAction(title: "Успех!",
                                                   style: .default,
                                                   handler: nil ))
-                            
                     self.present(alert, animated: true)
-                    
                 }
             }
-            
-            print(jsonRequest)
-            
-            
         }
-        
     }
     
 

@@ -12,23 +12,14 @@ class FirstWindow: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print( UserSettings.userModel ?? "нету" )
-        
+//        print( UserSettings.userModel ?? "нету" )
         if UserSettings.userModel != nil {
-            
-            print("!!!!!")
             DispatchQueue.main.async(execute: {
-                //FirstWindowToMenu
-                
                 let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-
                 let newViewController = storyboard.instantiateViewController(withIdentifier: "MainMenu") as! MainMenu
-
                 newViewController.modalPresentationStyle = .overFullScreen
                 self.present(newViewController, animated: true, completion: nil)
             })
-            
         } else {
             DispatchQueue.main.async(execute: {
                 let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -38,11 +29,7 @@ class FirstWindow: UINavigationController {
             })
             
         }
-        
-        // Do any additional setup after loading the view.
     }
-    
-
     /*
     // MARK: - Navigation
 

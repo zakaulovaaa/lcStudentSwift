@@ -4,8 +4,6 @@ class Registration: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
     }
     
     @IBOutlet weak var email: UITextField!
@@ -16,18 +14,17 @@ class Registration: UIViewController {
     
     @IBOutlet weak var warning: UITextView!
     
+    //возвращаемся на предыдущую страницу
     @IBAction func goLogin(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
     }
     
-    
-    
     @IBAction func register(_ sender: UIButton) {
         
+        //удаляем все предыдущие ворнинги
         warning.text = ""
-        
+        //будет проверять на наличие ошибок
         var check = true
-        
         if ( password1.text!.count < 5 ) {
             warning.text += "Пароль должен состоять не менее, \nчем из 5 символов"
             check = false
@@ -37,31 +34,31 @@ class Registration: UIViewController {
             check = false
         }
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let emailPred = NSPredicate( format:"SELF MATCHES %@", emailRegEx )
         if ( !emailPred.evaluate( with: email.text! ) ) {
             warning.text += "\nВместо почты ты ввел дичь"
             check = false
         }
         
+        //если ошибок не обнаружено
         if ( check ) {
-            
-            let jsonObject: [String: Any] = [
+            //собираем json
+            let jsonObject: [ String: Any ] = [
                 "email": email.text!,
                 "password": password1.text!
             ]
-            
-            let jsonRequest: [String: Any] = requestMain(
+            //делаем запрос
+            let jsonRequest: [ String: Any ] = requestMain(
                 urlStr: "http://localhost:8000/registration/",
                 jsonBody: jsonObject
             )
-            
             if let status = jsonRequest[ "status" ] as? Bool {
                 if ( !status ) {
+                    //выводим ошибки
                     if let message = jsonRequest[ "comment" ] as? String {
                         warning.text = message
                     }
                 } else {
-                    
                     let user: UserModel = UserModel( email: email.text!,
                                                      isVerified: false,
                                                      lastName: "",
@@ -70,19 +67,12 @@ class Registration: UIViewController {
                                                      studentsGroup: [] )
                     
                     UserSettings.userModel = user
-                    
-                    
                     performSegue( withIdentifier: "registerGoMenu", sender: nil )
                 }
             }
-            
-            print(jsonRequest)
         }
-        
-        
-        
     }
-    
+
     /*
     // MARK: - Navigation
 

@@ -12,6 +12,8 @@
 		4D4DED4024664858008AD13C /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4DED3F24664858008AD13C /* ChangePassword.swift */; };
 		4D5EB061244B5C9C00B19EDC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5EB060244B5C9C00B19EDC /* User.swift */; };
 		4D9580C9246D375300B3CDE6 /* PersonalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9580C8246D375300B3CDE6 /* PersonalCard.swift */; };
+		4D9580CF246D785700B3CDE6 /* CellPersonalDataGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9580CE246D785700B3CDE6 /* CellPersonalDataGroup.swift */; };
+		4D9580D1246D8B3300B3CDE6 /* GroupPersonalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9580D0246D8B3300B3CDE6 /* GroupPersonalCard.swift */; };
 		4D9E8AF6243DF77C001B262D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E8AF5243DF77C001B262D /* AppDelegate.swift */; };
 		4D9E8AF8243DF77C001B262D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E8AF7243DF77C001B262D /* SceneDelegate.swift */; };
 		4D9E8AFA243DF77C001B262D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9E8AF9243DF77C001B262D /* ViewController.swift */; };
@@ -52,6 +54,8 @@
 		4D4DED3F24664858008AD13C /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 		4D5EB060244B5C9C00B19EDC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4D9580C8246D375300B3CDE6 /* PersonalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCard.swift; sourceTree = "<group>"; };
+		4D9580CE246D785700B3CDE6 /* CellPersonalDataGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellPersonalDataGroup.swift; sourceTree = "<group>"; };
+		4D9580D0246D8B3300B3CDE6 /* GroupPersonalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPersonalCard.swift; sourceTree = "<group>"; };
 		4D9E8AF2243DF77C001B262D /* lc_student.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lc_student.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D9E8AF5243DF77C001B262D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D9E8AF7243DF77C001B262D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 			isa = PBXGroup;
 			children = (
 				4D9580C8246D375300B3CDE6 /* PersonalCard.swift */,
+				4D9580CE246D785700B3CDE6 /* CellPersonalDataGroup.swift */,
+				4D9580D0246D8B3300B3CDE6 /* GroupPersonalCard.swift */,
 			);
 			path = PersonalData;
 			sourceTree = "<group>";
@@ -384,8 +390,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				26DD172F246599A500430358 /* Verification.swift in Sources */,
+				4D9580CF246D785700B3CDE6 /* CellPersonalDataGroup.swift in Sources */,
 				4D1B37E62455E2A6007E4DB6 /* ServiceRequest.swift in Sources */,
 				4D5EB061244B5C9C00B19EDC /* User.swift in Sources */,
+				4D9580D1246D8B3300B3CDE6 /* GroupPersonalCard.swift in Sources */,
 				4D9580C9246D375300B3CDE6 /* PersonalCard.swift in Sources */,
 				4D9E8AFA243DF77C001B262D /* ViewController.swift in Sources */,
 				4DFAC549245E7EE4007AD97C /* RecoverThePassword.swift in Sources */,
