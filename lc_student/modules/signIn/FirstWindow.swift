@@ -19,10 +19,12 @@ class FirstWindow: UINavigationController {
             
             print("!!!!!")
             DispatchQueue.main.async(execute: {
+                //FirstWindowToMenu
+                
                 let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                
-                let newViewController = storyboard.instantiateViewController(withIdentifier: "MenuTable") as! MenuTable
-                
+
+                let newViewController = storyboard.instantiateViewController(withIdentifier: "MainMenu") as! MainMenu
+
                 newViewController.modalPresentationStyle = .overFullScreen
                 self.present(newViewController, animated: true, completion: nil)
             })

@@ -18,14 +18,86 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8VF-23-IME" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1070" y="56"/>
+            <point key="canvasLocation" x="-3368" y="234"/>
+        </scene>
+        <!--Расписание-->
+        <scene sceneID="qf0-eF-R92">
+            <objects>
+                <viewController id="DuL-yO-MDy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VrO-zl-W0p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="В настоящее время модуль &quot;расписание&quot; находится в разработке" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gjp-0P-xmR">
+                                <rect key="frame" x="63" y="189" width="288" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="D8U-Ry-Mir"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Расписание" image="table.badge.more" catalog="system" id="3xi-h1-V0v"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dsU-xP-d3W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3368.115942028986" y="1597.7678571428571"/>
+        </scene>
+        <!--Новости-->
+        <scene sceneID="e38-JP-oKk">
+            <objects>
+                <viewController id="ezM-Mp-2bL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wnu-Gk-qLr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="В настоящее время модуль &quot;новости&quot; находится в разработке" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jky-Re-flq">
+                                <rect key="frame" x="63" y="174" width="288" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="rt0-25-MB9"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Новости" image="bell.fill" catalog="system" id="eBN-fK-ckv"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XOl-Tp-Xfs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-829" y="1598"/>
+        </scene>
+        <!--MainMenu-->
+        <scene sceneID="fVy-yJ-i3q">
+            <objects>
+                <tabBarController storyboardIdentifier="MainMenu" title="MainMenu" modalPresentationStyle="fullScreen" id="HYr-4G-UPF" customClass="MainMenu" customModule="lc_student" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="lMT-zz-zUv"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="chL-MI-A6O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="DuL-yO-MDy" kind="relationship" relationship="viewControllers" id="oy5-nU-0h5"/>
+                        <segue destination="ezM-Mp-2bL" kind="relationship" relationship="viewControllers" id="Imz-VX-zQO"/>
+                        <segue destination="Hxt-lK-hJZ" kind="relationship" relationship="viewControllers" id="nRv-lX-6UT"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z2s-gx-eee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2228" y="623"/>
         </scene>
         <!--MenuTable-->
         <scene sceneID="FdI-BS-XEO">
             <objects>
                 <tableViewController storyboardIdentifier="MenuTable" title="MenuTable" modalPresentationStyle="fullScreen" id="Hxt-lK-hJZ" customClass="MenuTable" customModule="lc_student" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="csb-CR-KVd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Меню" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hoH-Ss-Zc3">
@@ -59,15 +131,17 @@
                             <outlet property="delegate" destination="Hxt-lK-hJZ" id="3Ss-zU-HuZ"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Меню" image="list.dash" catalog="system" id="jPF-Ql-MfR"/>
                     <navigationItem key="navigationItem" id="CC9-IN-8Zq"/>
                     <connections>
                         <segue destination="uDC-qg-0Vt" kind="show" identifier="MenuToSettings" id="hXS-tc-g6k"/>
                         <segue destination="YQf-oj-Mb5" kind="show" identifier="ToVerification" id="tRL-Ip-VIL"/>
+                        <segue destination="2Bh-9B-TkI" kind="show" identifier="MenuToPersonalCard" id="Fg8-dK-AxE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Drg-Tq-dCL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1478" y="647"/>
+            <point key="canvasLocation" x="-829" y="623"/>
         </scene>
         <!--Верификация-->
         <scene sceneID="PKY-SB-NEQ">
@@ -149,7 +223,58 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BSY-bO-2c3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3435" y="1039"/>
+            <point key="canvasLocation" x="1899" y="-154"/>
+        </scene>
+        <!--Личная карточка-->
+        <scene sceneID="Pf4-zy-oP1">
+            <objects>
+                <tableViewController title="Личная карточка" id="oBD-lD-dM4" customClass="PersonalCard" customModule="lc_student" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zYa-VS-TQR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellPersonalCard" rowHeight="100" id="Whg-FW-mCI">
+                                <rect key="frame" x="0.0" y="28" width="414" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Whg-FW-mCI" id="0cb-eK-AXY">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMT-AL-Wrf">
+                                            <rect key="frame" x="20" y="11" width="374" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="dataLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzD-kS-JtE">
+                                            <rect key="frame" x="20" y="49" width="374" height="48"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oBD-lD-dM4" id="Ceb-CK-gnX"/>
+                            <outlet property="delegate" destination="oBD-lD-dM4" id="JVe-8M-wOA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Личная карточка" id="ODs-vI-7JN">
+                        <barButtonItem key="leftBarButtonItem" image="multiply" catalog="system" id="gyK-RD-Kmq">
+                            <connections>
+                                <action selector="toMenu:" destination="oBD-lD-dM4" id="jnl-Bm-KtS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="35N-rd-74l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1898.5507246376812" y="622.76785714285711"/>
         </scene>
         <!--MainSettings-->
         <scene sceneID="FxI-5G-3Oz">
@@ -196,7 +321,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0N-qa-zH4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3435" y="329"/>
+            <point key="canvasLocation" x="1899" y="-950"/>
         </scene>
         <!--Change Password-->
         <scene sceneID="P1I-Fv-Ozi">
@@ -255,7 +380,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ph-2z-muQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4918.840579710145" y="328.79464285714283"/>
+            <point key="canvasLocation" x="2930" y="-950"/>
         </scene>
         <!--recoverThePassword-->
         <scene sceneID="Q7E-mF-QjF">
@@ -314,7 +439,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KGY-0x-QEE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="996" y="-893"/>
+            <point key="canvasLocation" x="-829" y="-950"/>
         </scene>
         <!--signIn-->
         <scene sceneID="L1g-46-7cb">
@@ -385,12 +510,12 @@
                         <outlet property="email" destination="P9j-Ve-ZtF" id="3nG-sd-elp"/>
                         <outlet property="password" destination="7aU-Zi-18W" id="7lA-5B-9Js"/>
                         <outlet property="warning" destination="Oz5-qz-ZWO" id="L8a-BC-kwN"/>
-                        <segue destination="Hxt-lK-hJZ" kind="show" identifier="signInGoMenu" id="eTa-y4-kCp"/>
+                        <segue destination="HYr-4G-UPF" kind="show" identifier="signInGoMenu" id="CeO-5B-abg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ySq-6g-aah" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="-154.01785714285714"/>
+            <point key="canvasLocation" x="-2184" y="-154"/>
         </scene>
         <!--Registration-->
         <scene sceneID="0K9-oQ-XD3">
@@ -452,17 +577,17 @@
                         <outlet property="password1" destination="7Xi-3x-N74" id="Srx-0s-U0H"/>
                         <outlet property="password2" destination="bK6-dL-s2r" id="w8s-cO-0c5"/>
                         <outlet property="warning" destination="Jff-CC-tOh" id="9Ec-EU-zPl"/>
-                        <segue destination="Hxt-lK-hJZ" kind="show" identifier="registerGoMenu" id="Q0c-fg-s6Y"/>
+                        <segue destination="HYr-4G-UPF" kind="show" identifier="registerGoMenu" id="utJ-hm-SCq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bch-PH-y3b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1937.68115942029" y="-154.01785714285714"/>
+            <point key="canvasLocation" x="-828" y="-154"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--NAV Настройки-->
         <scene sceneID="IeC-MS-mQm">
             <objects>
-                <navigationController wantsFullScreenLayout="YES" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="uDC-qg-0Vt" sceneMemberID="viewController">
+                <navigationController title="NAV Настройки" wantsFullScreenLayout="YES" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="uDC-qg-0Vt" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="DWN-g5-NHL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7pR-pU-eQr">
@@ -476,12 +601,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcT-84-bJN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2668" y="329"/>
+            <point key="canvasLocation" x="843" y="-950"/>
         </scene>
-        <!--Navigation Controller-->
+        <!-- NAV Верификация-->
         <scene sceneID="Wpl-e8-Ujh">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="YQf-oj-Mb5" sceneMemberID="viewController">
+                <navigationController title=" NAV Верификация" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="YQf-oj-Mb5" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="h2W-1o-Ln1"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vqr-4w-0Yq">
@@ -495,13 +620,35 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NNQ-vo-c44" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2667" y="1039"/>
+            <point key="canvasLocation" x="842" y="-154"/>
+        </scene>
+        <!--NAV личная карточка-->
+        <scene sceneID="bpE-11-h9Y">
+            <objects>
+                <navigationController title="NAV личная карточка" automaticallyAdjustsScrollViewInsets="NO" id="2Bh-9B-TkI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="PJT-aF-mUN"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Znc-o2-VV2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oBD-lD-dM4" kind="relationship" relationship="rootViewController" id="dKh-ST-rSU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MZv-5P-MEx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840.57971014492762" y="622.76785714285711"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eTa-y4-kCp"/>
+        <segue reference="utJ-hm-SCq"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="bell.fill" catalog="system" width="128" height="124"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="multiply" catalog="system" width="128" height="111"/>
+        <image name="table.badge.more" catalog="system" width="128" height="90"/>
     </resources>
 </document>

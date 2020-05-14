@@ -1,39 +1,18 @@
+//
+//  PersonalCardGroups.swift
+//  lc_student
+//
+//  Created by Дарья Закаулова on 14.05.2020.
+//  Copyright © 2020 Дарья Закаулова. All rights reserved.
+//
+
 import UIKit
 
-final class MenuItems: NSObject {
-    var name: String
-    
-    init( name: String ) {
-        self.name = name
-        
-        super.init()
-    }
-    
-}
+class PersonalCardGroups: UITableViewController {
 
-let menuItems = [ MenuItems(name: "Верификация"),           //Только не верифицированным
-                  MenuItems(name: "Личная карточка"),       //только верифицированным
-                  MenuItems(name: "Объявления"),            //только верифицированным
-                  //MenuItems(name: "Расписание"),            //всем (убрать)
-                  MenuItems(name: "Деканат"),               //только верифицированным
-                  MenuItems(name: "Домашние задания"),      //только верифицированным
-                  MenuItems(name: "Посещаемость"),          //только верифицированным
-                  MenuItems(name: "Настройки")              //всем
-                ]
-
-class MenuTable: UITableViewController {
-    
-    var items: [MenuItems] = menuItems
-
-    func printUserModel(user: UserModel) {
-        print( "\n\n\nemail = \(user.email) \nlastName = \(user.lastName!) \nfirstName = \(user.firstName!) \nmiddleName = \(user.middleName!) \nisVerified = \(user.isVerified)" )
-    }
+    let groups: [ Groups ] = UserSettings.userModel.studentsGroup ?? []
     
     override func viewDidLoad() {
-        
-        printUserModel(user: UserSettings.userModel)
-        
-        
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -43,42 +22,34 @@ class MenuTable: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    // MARK: - Table view data source
 
+    @IBAction func toPersonalCard(_ sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        // #warning Incomplete implementation, return the number of rows
+        return groups.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellGroupPersonalCard", for: indexPath)
         
-        let item = items[indexPath.row] as MenuItems
-        cell.textLabel?.text = item.name
+        cell.textLabel?.text = groups[ indexPath.row ].name
+        cell.detailTextLabel?.text = groups[ indexPath.row ].id
+
 
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let action = self.items[ indexPath.row ].name
-        
-        if ( action == "Настройки" ) {
-            performSegue( withIdentifier: "MenuToSettings", sender: nil )
-        }
-        if ( action == "Верификация" ) {
-            performSegue(withIdentifier: "ToVerification", sender: nil)
-        }
-        if ( action == "Личная карточка" ) {
-            performSegue(withIdentifier: "MenuToPersonalCard", sender: nil)
-        }
-        
-        
-//        print( self.items[indexPath.row].name )
-//        print(self.[indexPath.row])
-    }
+    
 
     /*
     // Override to support conditional editing of the table view.

@@ -8,6 +8,29 @@
 
 import Foundation
 
+class Groups: NSObject, NSCoding {
+    var name: String
+    var id: String
+    
+    init(name: String, id:String) {
+        self.name = name
+        self.id = id
+    }
+    func encode(with coder: NSCoder) {
+        coder.encode( name, forKey: "name" )
+        coder.encode( id, forKey: "id" )
+    }
+    
+    required init?(coder: NSCoder) {
+        name = coder.decodeObject(forKey: "name") as? String ?? ""
+        id = coder.decodeObject(forKey: "id") as? String ?? ""
+    }
+    
+    
+}
+//struct Groups {
+//    let name, id: String;
+//}
 
 class UserModel: NSObject, NSCoding {
     
@@ -16,11 +39,11 @@ class UserModel: NSObject, NSCoding {
     var lastName: String?;
     var firstName: String?;
     var middleName: String?;
-    var studentsGroup: [ String ];
+    var studentsGroup: [ Groups ]?;
     
     init ( email: String, isVerified: Bool,
            lastName: String, firstName: String, middleName: String,
-           studentsGroup: [ String ]) {
+           studentsGroup: [ Groups ]) {
         
         self.isVerified = isVerified
         self.email = email
@@ -46,7 +69,7 @@ class UserModel: NSObject, NSCoding {
         lastName = coder.decodeObject(forKey: "lastName") as? String ?? ""
         firstName = coder.decodeObject(forKey: "firstName") as? String ?? ""
         middleName = coder.decodeObject(forKey: "middleName") as? String ?? ""
-        studentsGroup = coder.decodeObject(forKey: "studentsGroup") as? [ String ] ?? []
+        studentsGroup = coder.decodeObject(forKey: "studentsGroup") as? [ Groups ] ?? []
     }
 }
 

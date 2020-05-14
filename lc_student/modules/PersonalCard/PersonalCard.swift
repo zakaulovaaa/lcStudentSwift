@@ -1,39 +1,33 @@
+//
+//  PersonalCard.swift
+//  lc_student
+//
+//  Created by Дарья Закаулова on 14.05.2020.
+//  Copyright © 2020 Дарья Закаулова. All rights reserved.
+//
+
 import UIKit
 
-final class MenuItems: NSObject {
-    var name: String
-    
-    init( name: String ) {
+final class mydata: NSObject {
+    let name: String;
+    let data: String;
+    init(name: String, data: String) {
         self.name = name
+        self.data = data
         
         super.init()
     }
-    
 }
 
-let menuItems = [ MenuItems(name: "Верификация"),           //Только не верифицированным
-                  MenuItems(name: "Личная карточка"),       //только верифицированным
-                  MenuItems(name: "Объявления"),            //только верифицированным
-                  //MenuItems(name: "Расписание"),            //всем (убрать)
-                  MenuItems(name: "Деканат"),               //только верифицированным
-                  MenuItems(name: "Домашние задания"),      //только верифицированным
-                  MenuItems(name: "Посещаемость"),          //только верифицированным
-                  MenuItems(name: "Настройки")              //всем
-                ]
+let items = [
+    mydata( name: "Фамилия", data: "aaa"),
+    mydata( name: "Имя", data: "bbb" )
+]
 
-class MenuTable: UITableViewController {
-    
-    var items: [MenuItems] = menuItems
 
-    func printUserModel(user: UserModel) {
-        print( "\n\n\nemail = \(user.email) \nlastName = \(user.lastName!) \nfirstName = \(user.firstName!) \nmiddleName = \(user.middleName!) \nisVerified = \(user.isVerified)" )
-    }
-    
+class PersonalCard: UITableViewController {
+
     override func viewDidLoad() {
-        
-        printUserModel(user: UserSettings.userModel)
-        
-        
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -43,42 +37,40 @@ class MenuTable: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    // MARK: - Table view data source
 
+    @IBAction func toMenu(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        
+        // #warning Incomplete implementation, return the number of rows
         return items.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath)
-        
-        let item = items[indexPath.row] as MenuItems
-        cell.textLabel?.text = item.name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "personalCardCell", for: indexPath)
+
+        if let nameLabel = cell.viewWithTag(100) as? UILabel { //3
+            nameLabel.text = items[ indexPath.row ].name
+        }
+        if let dataLabel = cell.viewWithTag(101) as? UILabel {
+            dataLabel.text = items[ indexPath.row ].name
+        }
 
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let action = self.items[ indexPath.row ].name
-        
-        if ( action == "Настройки" ) {
-            performSegue( withIdentifier: "MenuToSettings", sender: nil )
-        }
-        if ( action == "Верификация" ) {
-            performSegue(withIdentifier: "ToVerification", sender: nil)
-        }
-        if ( action == "Личная карточка" ) {
-            performSegue(withIdentifier: "MenuToPersonalCard", sender: nil)
-        }
-        
-        
-//        print( self.items[indexPath.row].name )
-//        print(self.[indexPath.row])
-    }
 
     /*
     // Override to support conditional editing of the table view.

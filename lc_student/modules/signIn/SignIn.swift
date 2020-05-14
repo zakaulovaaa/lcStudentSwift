@@ -22,9 +22,16 @@ class SignIn: UIViewController, UITextFieldDelegate {
     
     let ADDRESS: String = "http://localhost:8000/" //ДЛЯ ДАШИ
     
-    
+    //чекер для вывода
     func printUserModel(user: UserModel) {
         print( "\n\n\nemail = \(user.email) \nlastName = \(user.lastName!) \nfirstName = \(user.firstName!) \nmiddleName = \(user.middleName!) \nisVerified = \(user.isVerified)" )
+        
+        if ( user.studentsGroup != nil) {
+            print(type(of: user.studentsGroup!))
+            for group in user.studentsGroup! {
+                print(group.name)
+            }
+        }
     }
     
     
@@ -42,13 +49,14 @@ class SignIn: UIViewController, UITextFieldDelegate {
             jsonBody: jsonObject
         )
         
-        print( jsonRequest )
+//        print( jsonRequest )
         
         if let status_auth = jsonRequest[ "status" ]! as? Bool {
             if ( status_auth ) {
                 
                 var lastName = "", firstName = "", middleName = ""
                 var isVerified: Bool = false
+                var groups: [ Groups ] = []
                 
                 if let cnt = jsonRequest[ "last_name" ] as? String {
                     lastName = cnt
@@ -62,25 +70,27 @@ class SignIn: UIViewController, UITextFieldDelegate {
                 if let cnt = jsonRequest[ "is_verificated" ] as? Bool {
                     isVerified = cnt
                 }
-
+                if let cnt = jsonRequest[ "students" ] as? [ String:String ] {
+                    for (groupId, groupName)  in cnt {
+                        groups.append(Groups(name: groupName, id: groupId))
+                    }
+                }
+                
                 let user: UserModel = UserModel( email: email.text!,
                                                  isVerified: isVerified,
                                                  lastName: lastName,
                                                  firstName: firstName,
                                                  middleName: middleName,
-                                                 studentsGroup: [] )
+                                                 studentsGroup: groups )
                 
                 UserSettings.userModel = user
                 
                 printUserModel(user: UserSettings.userModel)
                 
-                
                 performSegue( withIdentifier: "signInGoMenu", sender: nil )
             } else {
-                print( "!!!!!!!!!" )
                 if let message = jsonRequest[ "comment" ] as? String {
                     warning.text = message
-                    print(warning.text!)
                 }
             }
         }
