@@ -8,29 +8,34 @@
 
 import Foundation
 
-class Groups: NSObject, NSCoding {
+class Group: NSObject, NSCoding {
     var name: String
-    var id: String
+    var idZK1C: String
+    var degreeProgram: String
+    var faculty: String
     
-    init(name: String, id:String) {
+    init(name: String, id: String, degreeProgram: String, faculty: String) {
         self.name = name
-        self.id = id
+        self.idZK1C = id
+        self.degreeProgram = degreeProgram
+        self.faculty = faculty
     }
     func encode(with coder: NSCoder) {
         coder.encode( name, forKey: "name" )
-        coder.encode( id, forKey: "id" )
+        coder.encode( idZK1C, forKey: "idZK1C" )
+        coder.encode( degreeProgram, forKey: "degreeProgram" )
+        coder.encode( faculty, forKey: "faculty" )
     }
     
     required init?(coder: NSCoder) {
         name = coder.decodeObject(forKey: "name") as? String ?? ""
-        id = coder.decodeObject(forKey: "id") as? String ?? ""
+        idZK1C = coder.decodeObject(forKey: "idZK1C") as? String ?? ""
+        degreeProgram = coder.decodeObject(forKey: "degreeProgram") as? String ?? ""
+        faculty = coder.decodeObject(forKey: "faculty") as? String ?? ""
     }
     
     
 }
-//struct Groups {
-//    let name, id: String;
-//}
 
 class UserModel: NSObject, NSCoding {
     
@@ -39,11 +44,11 @@ class UserModel: NSObject, NSCoding {
     var lastName: String?;
     var firstName: String?;
     var middleName: String?;
-    var studentsGroup: [ Groups ]?;
+    var studentsGroup: [ Group ]?;
     
     init ( email: String, isVerified: Bool,
            lastName: String, firstName: String, middleName: String,
-           studentsGroup: [ Groups ]) {
+           studentsGroup: [ Group ] ) {
         
         self.isVerified = isVerified
         self.email = email
@@ -51,7 +56,6 @@ class UserModel: NSObject, NSCoding {
         self.firstName = firstName
         self.middleName = middleName
         self.studentsGroup = studentsGroup
-        
     }
     
     func encode(with coder: NSCoder) {
@@ -69,7 +73,7 @@ class UserModel: NSObject, NSCoding {
         lastName = coder.decodeObject(forKey: "lastName") as? String ?? ""
         firstName = coder.decodeObject(forKey: "firstName") as? String ?? ""
         middleName = coder.decodeObject(forKey: "middleName") as? String ?? ""
-        studentsGroup = coder.decodeObject(forKey: "studentsGroup") as? [ Groups ] ?? []
+        studentsGroup = coder.decodeObject(forKey: "studentsGroup") as? [ Group ] ?? []
     }
 }
 

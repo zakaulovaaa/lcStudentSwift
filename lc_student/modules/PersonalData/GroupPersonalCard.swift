@@ -19,7 +19,7 @@ class GroupPersonalCard: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
     //получаем список групп текущего пользователя
-    let groups: [ Groups ] = UserSettings.userModel.studentsGroup ?? []
+    let groups: [ Group ] = UserSettings.userModel.studentsGroup ?? []
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -31,11 +31,29 @@ class GroupPersonalCard: UITableViewController {
     //отрисовываем ячейки
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellGroup", for: indexPath)
-        let group: Groups = groups[ indexPath.row ]
+        let group: Group = groups[ indexPath.row ]
         cell.textLabel?.text = group.name
-        cell.detailTextLabel?.text = group.id
-    
         return cell
+    }
+    
+    //обработка нажатия на ячейку
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let action = self.groups[ indexPath.row ].name
+            
+        let cntGroup = UserSettings.userModel.studentsGroup?.filter( {($0.name == action)} )
+            
+        
+        let message = "\n\(cntGroup?[ 0 ].degreeProgram ?? "") \n\n\(cntGroup?[ 0 ].faculty ?? "")"
+        
+        let alert = UIAlertController(title: action,
+                                      message: message,
+                                      preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "понял-принял",
+                                      style: .default,
+                                      handler: nil ))
+        self.present(alert, animated: true)
+            
     }
 
 

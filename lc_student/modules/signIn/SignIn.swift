@@ -29,13 +29,12 @@ class SignIn: UIViewController, UITextFieldDelegate {
         if ( user.studentsGroup != nil) {
             print(type(of: user.studentsGroup!))
             for group in user.studentsGroup! {
-                print(group.name)
+                print(group.name, group.degreeProgram, group.faculty, group.idZK1C)
             }
         }
     }
     
     @IBAction func btnSignIn(_ sender: Any) {
-        
         let jsonObject: [String: Any] = [
             "email": email.text!,
             "password": password.text!
@@ -44,13 +43,12 @@ class SignIn: UIViewController, UITextFieldDelegate {
             urlStr: ADDRESS + "sign_in/",
             jsonBody: jsonObject
         )
-        
         if let status_auth = jsonRequest[ "status" ]! as? Bool {
             if ( status_auth ) {
                 
                 var lastName = "", firstName = "", middleName = ""
                 var isVerified: Bool = false
-                var groups: [ Groups ] = []
+                var groups: [ Group ] = []
                 
                 if let cnt = jsonRequest[ "last_name" ] as? String {
                     lastName = cnt
@@ -64,12 +62,20 @@ class SignIn: UIViewController, UITextFieldDelegate {
                 if let cnt = jsonRequest[ "is_verificated" ] as? Bool {
                     isVerified = cnt
                 }
-                if let cnt = jsonRequest[ "students" ] as? [ String:String ] {
-                    for (groupId, groupName)  in cnt {
-                        groups.append(Groups(name: groupName, id: groupId))
+                if let cnt = jsonRequest[ "students" ] as? [ [String:String] ] {
+                    
+                    for i in 0 ..< cnt.count {
+                        
+                        groups.append(
+                            Group(
+                                name: cnt[ i ][ "group_name" ]!,
+                                id: cnt[ i ][ "id_ZK_1C" ]!,
+                                degreeProgram: cnt[ i ][ "degree_program" ]!,
+                                faculty: cnt[ i ][ "faculty_name" ]!
+                            )
+                        )
                     }
                 }
-                
                 let user: UserModel = UserModel( email: email.text!,
                                                  isVerified: isVerified,
                                                  lastName: lastName,

@@ -28,7 +28,7 @@ func getItemsData() -> [ PersonalCardItems ] {
         PersonalCardItems(name: "Имя", data: (user?.firstName)!),
         PersonalCardItems(name: "Отчество", data: (user?.middleName)!)
     ]
-    let groups: [ Groups ] = UserSettings.userModel.studentsGroup ?? []
+    let groups: [ Group ] = UserSettings.userModel.studentsGroup ?? []
     //добавляем в список первую группу
     for group in groups {
         answer.append( PersonalCardItems(name: "Учебная группа", data: group.name) )
@@ -40,6 +40,7 @@ func getItemsData() -> [ PersonalCardItems ] {
 class PersonalCard: UITableViewController {
 
     let items: [PersonalCardItems] = getItemsData()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = 80.0
@@ -60,6 +61,7 @@ class PersonalCard: UITableViewController {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CellPersonalCardGroup", for: indexPath)
             return cell
         } else {
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "CellPersonalCard", for: indexPath)
             if let nameLabel = cell.viewWithTag(100) as? UILabel {
                 nameLabel.text = items[ indexPath.row ].name
@@ -77,7 +79,7 @@ class PersonalCard: UITableViewController {
             
             if ( action == "Учебная группа" ) {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "CellPersonalCardGroup", for: indexPath)
-                let groups: [ Groups ] = UserSettings.userModel.studentsGroup ?? []
+                let groups: [ Group ] = UserSettings.userModel.studentsGroup ?? []
                 if (groups.count > 1) {
                     performSegue(withIdentifier: "toGroupPersonalCard", sender: nil)
                 } else {
@@ -85,9 +87,11 @@ class PersonalCard: UITableViewController {
                     if let dataLabel = cell.viewWithTag(101) as? UILabel {
                         data = dataLabel.text!
                     }
+                    let message = "\n\(groups[ 0 ].degreeProgram) \n\n\(groups[ 0 ].faculty)"
                     let alert = UIAlertController(title: data,
-                                                  message: "Я ТУТ ОДНА",
+                                                  message: message,
                                                   preferredStyle: .alert)
+                    
                     alert.addAction(UIAlertAction(title: "понял-принял",
                                                   style: .default,
                                                   handler: nil ))

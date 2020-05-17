@@ -10,16 +10,16 @@ import UIKit
 
 class CellPersonalDataGroup: UITableViewCell {
 
-    var groups: [ Groups ] = UserSettings.userModel.studentsGroup ?? []
+    var groups: [ Group ] = UserSettings.userModel.studentsGroup ?? []
     var timer = Timer()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         //отрисовываем начальное значение ячейки
         decreaseTimer();
+        //добавляем стрелочку
+        self.accessoryType = .disclosureIndicator
         if (groups.count > 1) {
-            //добавляем стрелочку
-            self.accessoryType = .disclosureIndicator
             //запускаем таймер
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(CellPersonalDataGroup.decreaseTimer), userInfo: nil, repeats: true)
         }
