@@ -7,38 +7,41 @@ class Registration: UIViewController {
     }
     
     @IBOutlet weak var email: UITextField!
-    
     @IBOutlet weak var password1: UITextField!
-    
     @IBOutlet weak var password2: UITextField!
-    
     @IBOutlet weak var warning: UITextView!
+    @IBOutlet weak var warningLC: NSLayoutConstraint!
     
     //возвращаемся на предыдущую страницу
-    @IBAction func goLogin(_ sender: UIButton) {
+    @IBAction func toSignIn(_ sender: UIBarButtonItem) {
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func register(_ sender: UIButton) {
         
-        //удаляем все предыдущие ворнинги
-        warning.text = ""
         //будет проверять на наличие ошибок
         var check = true
+        var message = ""
+        
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate( format:"SELF MATCHES %@", emailRegEx )
+        
+        if ( !emailPred.evaluate( with: self.email.text! ) ) {
+            message += "Вместо почты ты ввел дичь"
+            check = false
+        }
+        
         if ( password1.text!.count < 5 ) {
-            warning.text += "Пароль должен состоять не менее, \nчем из 5 символов"
+            message += "\nПароль должен состоять не менее, \nчем из 5 символов"
             check = false
         }
         if ( password1.text! != password2.text! ) {
-            warning.text += "\nВведенные пароли не совпадают"
+            message += "\nВведенные пароли не совпадают"
             check = false
         }
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let emailPred = NSPredicate( format:"SELF MATCHES %@", emailRegEx )
-        if ( !emailPred.evaluate( with: email.text! ) ) {
-            warning.text += "\nВместо почты ты ввел дичь"
-            check = false
-        }
+        
+        
+        
         
         //если ошибок не обнаружено
         if ( check ) {
@@ -71,6 +74,15 @@ class Registration: UIViewController {
                 }
             }
         }
+        
+        if (message == self.warning.text!) {
+            
+        } else {
+            self.warning.text = message
+            self.warningLC.constant = self.warning.contentSize.height + 15.0
+        }
+        
+        
     }
 
     /*

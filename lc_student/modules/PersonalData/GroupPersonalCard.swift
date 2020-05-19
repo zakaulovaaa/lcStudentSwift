@@ -45,9 +45,14 @@ class GroupPersonalCard: UITableViewController {
         
         let message = "\n\(cntGroup?[ 0 ].degreeProgram ?? "") \n\n\(cntGroup?[ 0 ].faculty ?? "")"
         
-        let alert = UIAlertController(title: action,
-                                      message: message,
-                                      preferredStyle: .alert)
+        let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+        let titleAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue", size: 24)!, NSAttributedString.Key.foregroundColor: UIColor.black]
+        
+        let titleString = NSAttributedString(string: action, attributes: titleAttributes)
+        let messageAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 16)!, NSAttributedString.Key.foregroundColor: UIColor.darkGray]
+        let messageString = NSAttributedString(string: message, attributes: messageAttributes)
+        alert.setValue(titleString, forKey: "attributedTitle")
+        alert.setValue(messageString, forKey: "attributedMessage")
         
         alert.addAction(UIAlertAction(title: "понял-принял",
                                       style: .default,

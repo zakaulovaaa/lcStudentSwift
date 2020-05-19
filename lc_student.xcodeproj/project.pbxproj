@@ -11,6 +11,7 @@
 		4D1B37E62455E2A6007E4DB6 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B37E52455E2A6007E4DB6 /* ServiceRequest.swift */; };
 		4D4DED4024664858008AD13C /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4DED3F24664858008AD13C /* ChangePassword.swift */; };
 		4D5EB061244B5C9C00B19EDC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5EB060244B5C9C00B19EDC /* User.swift */; };
+		4D6078D424724B09006E962A /* AlertForGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6078D324724B09006E962A /* AlertForGroup.swift */; };
 		4D9580C9246D375300B3CDE6 /* PersonalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9580C8246D375300B3CDE6 /* PersonalCard.swift */; };
 		4D9580CF246D785700B3CDE6 /* CellPersonalDataGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9580CE246D785700B3CDE6 /* CellPersonalDataGroup.swift */; };
 		4D9580D1246D8B3300B3CDE6 /* GroupPersonalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9580D0246D8B3300B3CDE6 /* GroupPersonalCard.swift */; };
@@ -53,6 +54,7 @@
 		4D1B37E52455E2A6007E4DB6 /* ServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
 		4D4DED3F24664858008AD13C /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 		4D5EB060244B5C9C00B19EDC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4D6078D324724B09006E962A /* AlertForGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertForGroup.swift; sourceTree = "<group>"; };
 		4D9580C8246D375300B3CDE6 /* PersonalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCard.swift; sourceTree = "<group>"; };
 		4D9580CE246D785700B3CDE6 /* CellPersonalDataGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellPersonalDataGroup.swift; sourceTree = "<group>"; };
 		4D9580D0246D8B3300B3CDE6 /* GroupPersonalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPersonalCard.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				4D9580C8246D375300B3CDE6 /* PersonalCard.swift */,
 				4D9580CE246D785700B3CDE6 /* CellPersonalDataGroup.swift */,
 				4D9580D0246D8B3300B3CDE6 /* GroupPersonalCard.swift */,
+				4D6078D324724B09006E962A /* AlertForGroup.swift */,
 			);
 			path = PersonalData;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D6078D424724B09006E962A /* AlertForGroup.swift in Sources */,
 				26DD172F246599A500430358 /* Verification.swift in Sources */,
 				4D9580CF246D785700B3CDE6 /* CellPersonalDataGroup.swift in Sources */,
 				4D1B37E62455E2A6007E4DB6 /* ServiceRequest.swift in Sources */,

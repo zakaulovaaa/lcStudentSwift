@@ -43,7 +43,7 @@ class PersonalCard: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.rowHeight = 80.0
+        self.tableView.rowHeight = 70.0
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -88,9 +88,15 @@ class PersonalCard: UITableViewController {
                         data = dataLabel.text!
                     }
                     let message = "\n\(groups[ 0 ].degreeProgram) \n\n\(groups[ 0 ].faculty)"
-                    let alert = UIAlertController(title: data,
-                                                  message: message,
-                                                  preferredStyle: .alert)
+                    
+                    let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
+                    let titleAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue", size: 24)!, NSAttributedString.Key.foregroundColor: UIColor.black]
+                    
+                    let titleString = NSAttributedString(string: data, attributes: titleAttributes)
+                    let messageAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 16)!, NSAttributedString.Key.foregroundColor: UIColor.darkGray]
+                    let messageString = NSAttributedString(string: message, attributes: messageAttributes)
+                    alert.setValue(titleString, forKey: "attributedTitle")
+                    alert.setValue(messageString, forKey: "attributedMessage")
                     
                     alert.addAction(UIAlertAction(title: "понял-принял",
                                                   style: .default,

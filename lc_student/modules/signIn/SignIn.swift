@@ -5,7 +5,8 @@ class SignIn: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var warning: UILabel!
+    @IBOutlet weak var warning: UITextView!
+    @IBOutlet weak var warningLC: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,6 +90,7 @@ class SignIn: UIViewController, UITextFieldDelegate {
             } else {
                 if let message = jsonRequest[ "comment" ] as? String {
                     warning.text = message
+                    warningLC.constant = self.warning.contentSize.height
                 }
             }
         }

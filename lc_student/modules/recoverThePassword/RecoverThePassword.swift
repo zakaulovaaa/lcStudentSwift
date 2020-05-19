@@ -16,8 +16,10 @@ class RecoverThePassword: UIViewController {
     
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var warning: UITextView!
+    @IBOutlet weak var warningHC: NSLayoutConstraint!
     //на предыдущую страницу
-    @IBAction func back(_ sender: UIButton) {
+    
+    @IBAction func back(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     //при нажатии на кнопочку восстановить
@@ -41,6 +43,9 @@ class RecoverThePassword: UIViewController {
             } else { //вывод в ворнингах ошибки
                 if let message = jsonRequest[ "comment" ] as? String {
                     warning.text = message
+                    
+                    warningHC.constant = self.warning.contentSize.height
+                    
                     warning.textColor = UIColor.systemPink
                 }
             }
