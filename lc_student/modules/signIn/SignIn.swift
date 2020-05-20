@@ -7,9 +7,46 @@ class SignIn: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var warning: UITextView!
     @IBOutlet weak var warningLC: NSLayoutConstraint!
+    @IBOutlet weak var btnSignIn: UIButton!
+    @IBOutlet weak var btnToRegistration: UIButton!
+    @IBOutlet weak var btnToRecoverThePassword: UIButton!
+    
+    @IBOutlet var viewSignIn: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //наводим красоту
+        btnSignIn.setTitleColor(ButtonAppearance.textColor, for: .normal)
+        btnToRegistration.setTitleColor(ButtonAppearance.textColor, for: .normal)
+        btnToRecoverThePassword.setTitleColor(ButtonAppearance.textColor, for: .normal)
+        viewSignIn.backgroundColor = ViewAppearance.backgroundColor
+        email.backgroundColor = TextFieldAppearance.backgroundColor
+        password.backgroundColor = TextFieldAppearance.backgroundColor
+        
+        email.borderStyle = .none
+        email.layer.masksToBounds = false
+        email.layer.cornerRadius = 5.0;
+        email.layer.borderColor = UIColor.clear.cgColor
+        email.layer.shadowColor = TextFieldAppearance.shadowOpacityColor.cgColor
+        email.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        email.layer.shadowOpacity = 0.6
+        email.layer.shadowRadius = 4.0
+        email.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: email.frame.height))
+        email.leftViewMode = .always
+        
+        password.borderStyle = .none
+        password.layer.masksToBounds = false
+        password.layer.cornerRadius = 5.0;
+        password.layer.borderColor = UIColor.clear.cgColor
+        password.layer.shadowColor = TextFieldAppearance.shadowOpacityColor.cgColor
+        password.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        password.layer.shadowOpacity = 0.6
+        password.layer.shadowRadius = 5.0
+        password.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: email.frame.height))
+        password.leftViewMode = .always
+    
         
         email.delegate = self
         password.delegate = self

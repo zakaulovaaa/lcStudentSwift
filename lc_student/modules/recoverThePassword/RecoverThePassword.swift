@@ -12,16 +12,38 @@ class RecoverThePassword: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewRecoverPassword.backgroundColor = ViewAppearance.backgroundColor
+        btnRecover.setTitleColor(ButtonAppearance.textColor, for: .normal)
+        
+        email.backgroundColor = TextFieldAppearance.backgroundColor
+        
+        email.borderStyle = .none
+        email.layer.masksToBounds = false
+        email.layer.cornerRadius = 5.0;
+        email.layer.borderColor = UIColor.clear.cgColor
+        email.layer.shadowColor = TextFieldAppearance.shadowOpacityColor.cgColor
+        email.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        email.layer.shadowOpacity = 0.6
+        email.layer.shadowRadius = 4.0
+        email.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: email.frame.height))
+        email.leftViewMode = .always
+        
+        navigationController?.navigationBar.barTintColor = ViewAppearance.backgroundColor
+        
     }
     
+    @IBOutlet var viewRecoverPassword: UIView!
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var warning: UITextView!
     @IBOutlet weak var warningHC: NSLayoutConstraint!
-    //на предыдущую страницу
+    @IBOutlet weak var btnRecover: UIButton!
     
+    //на предыдущую страницу
     @IBAction func back(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
     //при нажатии на кнопочку восстановить
     @IBAction func recover(_ sender: UIButton) {
         warning.text = email.text!
