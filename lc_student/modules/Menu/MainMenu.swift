@@ -12,7 +12,9 @@ class MainMenu: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        self.navigationItem.leftBarButtonItems = []
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationItem.hidesBackButton = true
         // Do any additional setup after loading the view.
     }
     

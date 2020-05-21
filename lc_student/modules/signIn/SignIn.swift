@@ -18,13 +18,14 @@ class SignIn: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         //наводим красоту
+        //кнопочки хотят быть красивыми
         btnSignIn.setTitleColor(ButtonAppearance.textColor, for: .normal)
         btnToRegistration.setTitleColor(ButtonAppearance.textColor, for: .normal)
         btnToRecoverThePassword.setTitleColor(ButtonAppearance.textColor, for: .normal)
+        //вьюшечка тоже хочет быть красивой
         viewSignIn.backgroundColor = ViewAppearance.backgroundColor
+        //textField'ы хотят быть вообще самые красивые
         email.backgroundColor = TextFieldAppearance.backgroundColor
-        password.backgroundColor = TextFieldAppearance.backgroundColor
-        
         email.borderStyle = .none
         email.layer.masksToBounds = false
         email.layer.cornerRadius = 5.0;
@@ -36,6 +37,7 @@ class SignIn: UIViewController, UITextFieldDelegate {
         email.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: email.frame.height))
         email.leftViewMode = .always
         
+        password.backgroundColor = TextFieldAppearance.backgroundColor
         password.borderStyle = .none
         password.layer.masksToBounds = false
         password.layer.cornerRadius = 5.0;

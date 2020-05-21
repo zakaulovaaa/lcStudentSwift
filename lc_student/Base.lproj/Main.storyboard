@@ -97,7 +97,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="MenuTable" title="MenuTable" modalPresentationStyle="fullScreen" id="Hxt-lK-hJZ" customClass="MenuTable" customModule="lc_student" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="csb-CR-KVd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Меню" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hoH-Ss-Zc3">
@@ -133,6 +133,7 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Меню" image="list.dash" catalog="system" id="jPF-Ql-MfR"/>
                     <navigationItem key="navigationItem" id="CC9-IN-8Zq"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <segue destination="uDC-qg-0Vt" kind="show" identifier="MenuToSettings" id="hXS-tc-g6k"/>
                         <segue destination="YQf-oj-Mb5" kind="show" identifier="ToVerification" id="tRL-Ip-VIL"/>
