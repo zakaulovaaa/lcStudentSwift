@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TEG-ZH-Ya0">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -23,24 +23,33 @@
         <!--Расписание-->
         <scene sceneID="qf0-eF-R92">
             <objects>
-                <viewController id="DuL-yO-MDy" sceneMemberID="viewController">
+                <viewController id="DuL-yO-MDy" customClass="TimeTableViewController" customModule="lc_student" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VrO-zl-W0p">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="В настоящее время модуль &quot;расписание&quot; находится в разработке" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gjp-0P-xmR">
-                                <rect key="frame" x="62" y="189" width="288" height="240"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="В настоящее время модуль &quot;расписание&quot; находится в разработке" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gjp-0P-xmR">
+                                <rect key="frame" x="41" y="144" width="332" height="269"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="D8U-Ry-Mir" firstAttribute="bottom" secondItem="gjp-0P-xmR" secondAttribute="bottom" constant="400" id="1Tl-26-dDg"/>
+                            <constraint firstItem="gjp-0P-xmR" firstAttribute="top" secondItem="D8U-Ry-Mir" secondAttribute="top" constant="100" id="EhK-KC-VC8"/>
+                            <constraint firstItem="gjp-0P-xmR" firstAttribute="leading" secondItem="D8U-Ry-Mir" secondAttribute="leading" constant="41" id="UmW-SX-WFb"/>
+                            <constraint firstItem="D8U-Ry-Mir" firstAttribute="trailing" secondItem="gjp-0P-xmR" secondAttribute="trailing" constant="41" id="dOg-HA-CR5"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="D8U-Ry-Mir"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Расписание" image="table.badge.more" catalog="system" id="3xi-h1-V0v"/>
+                    <tabBarItem key="tabBarItem" title="Расписание" image="table.badge.more" catalog="system" id="3xi-h1-V0v">
+                        <color key="badgeColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="viewTimeTable" destination="VrO-zl-W0p" id="gN7-9c-a5D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsU-xP-d3W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,12 +60,11 @@
             <objects>
                 <viewController id="ezM-Mp-2bL" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wnu-Gk-qLr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="В настоящее время модуль &quot;новости&quot; находится в разработке" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jky-Re-flq">
-                                <rect key="frame" x="63" y="174" width="288" height="240"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="В настоящее время модуль &quot;новости&quot; находится в разработке" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jky-Re-flq">
+                                <rect key="frame" x="41" y="144" width="332" height="269"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
@@ -64,9 +72,17 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jky-Re-flq" firstAttribute="leading" secondItem="rt0-25-MB9" secondAttribute="leading" constant="41" id="41Q-Ii-geI"/>
+                            <constraint firstItem="rt0-25-MB9" firstAttribute="trailing" secondItem="jky-Re-flq" secondAttribute="trailing" constant="41" id="c3q-9K-ySJ"/>
+                            <constraint firstItem="rt0-25-MB9" firstAttribute="bottom" secondItem="jky-Re-flq" secondAttribute="bottom" constant="400" id="f69-BG-h7P"/>
+                            <constraint firstItem="jky-Re-flq" firstAttribute="top" secondItem="rt0-25-MB9" secondAttribute="top" constant="100" id="vxw-91-fij"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rt0-25-MB9"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Новости" image="bell.fill" catalog="system" id="eBN-fK-ckv"/>
+                    <tabBarItem key="tabBarItem" title="Новости" image="bell.fill" catalog="system" id="eBN-fK-ckv">
+                        <color key="badgeColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XOl-Tp-Xfs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -77,10 +93,12 @@
             <objects>
                 <tabBarController storyboardIdentifier="MainMenu" title="MainMenu" modalPresentationStyle="fullScreen" id="HYr-4G-UPF" customClass="MainMenu" customModule="lc_student" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="lMT-zz-zUv"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="chL-MI-A6O">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="DuL-yO-MDy" kind="relationship" relationship="viewControllers" id="oy5-nU-0h5"/>
@@ -108,7 +126,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MenuCell" textLabel="uEJ-oF-0IK" rowHeight="110" style="IBUITableViewCellStyleDefault" id="XmC-kZ-OeZ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MenuCell" textLabel="uEJ-oF-0IK" rowHeight="110" style="IBUITableViewCellStyleDefault" id="XmC-kZ-OeZ">
                                 <rect key="frame" x="0.0" y="150" width="414" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XmC-kZ-OeZ" id="Wzb-CX-ao8">
@@ -135,6 +153,7 @@
                     <navigationItem key="navigationItem" id="CC9-IN-8Zq"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="viewManuTable" destination="csb-CR-KVd" id="qzs-Pv-D8Z"/>
                         <segue destination="uDC-qg-0Vt" kind="show" identifier="MenuToSettings" id="hXS-tc-g6k"/>
                         <segue destination="YQf-oj-Mb5" kind="show" identifier="ToVerification" id="tRL-Ip-VIL"/>
                         <segue destination="2Bh-9B-TkI" kind="show" identifier="MenuToPersonalCard" id="Fg8-dK-AxE"/>
@@ -422,6 +441,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="viewMenuTable" destination="Vm6-2x-o7D" id="9Or-5G-M7H"/>
                         <segue destination="u7d-Ja-0VT" kind="show" identifier="ToChangePassword" id="lpF-uU-eiz"/>
                     </connections>
                 </tableViewController>

@@ -26,8 +26,11 @@ class MainSettings: UITableViewController {
     
     var items: [SettingsItems] = settingsItems
 
+    @IBOutlet var viewMenuTable: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.viewMenuTable.backgroundColor = ViewAppearance.backgroundColor
     }
     //переход в меню
     @IBAction func toMenu(_ sender: UIBarButtonItem) {
@@ -45,7 +48,9 @@ class MainSettings: UITableViewController {
     //отрисовка пунктов меню
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsCell", for: indexPath)
-
+        
+        cell.backgroundColor = ViewAppearance.backgroundColor
+        
         let item = items[indexPath.row] as SettingsItems
         cell.textLabel?.text = item.name
 

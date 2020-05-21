@@ -25,6 +25,9 @@ class MenuTable: UITableViewController {
     
     var items: [MenuItems] = menuItems
 
+    @IBOutlet var viewManuTable: UITableView!
+    
+    
     func printUserModel(user: UserModel) {
         print( "\n\n\nemail = \(user.email) \nlastName = \(user.lastName!) \nfirstName = \(user.firstName!) \nmiddleName = \(user.middleName!) \nisVerified = \(user.isVerified)" )
     }
@@ -32,9 +35,10 @@ class MenuTable: UITableViewController {
     override func viewDidLoad() {
         
         printUserModel(user: UserSettings.userModel)
-        
+        viewManuTable.backgroundColor = ViewAppearance.backgroundColor
         
         super.viewDidLoad()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -55,6 +59,7 @@ class MenuTable: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath)
+        cell.backgroundColor = ViewAppearance.backgroundColor
         
         let item = items[indexPath.row] as MenuItems
         cell.textLabel?.text = item.name
@@ -63,6 +68,10 @@ class MenuTable: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        
         let action = self.items[ indexPath.row ].name
         
         if ( action == "Настройки" ) {

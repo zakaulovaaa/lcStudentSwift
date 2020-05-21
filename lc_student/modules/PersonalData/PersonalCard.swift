@@ -75,6 +75,9 @@ class PersonalCard: UITableViewController {
     
     //обработка нажатия на ячейку
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+            tableView.deselectRow(at: indexPath, animated: true)
+        
             let action = self.items[ indexPath.row ].name
             
             if ( action == "Учебная группа" ) {

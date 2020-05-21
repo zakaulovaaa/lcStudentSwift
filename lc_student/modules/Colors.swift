@@ -20,5 +20,9 @@ enum TextFieldAppearance {
     static let borderColor = UIColor.init(red: 255/255, green: 0/255, blue: 0/255, alpha: 0.0)
     static let shadowOpacityColor = UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 1.0)
 }
+enum TabBarAppearance {
+    static let unselectedItemTintColor = UIColor.init(red: 176/255, green: 189/255, blue: 202/255, alpha: 1)
+    static let backgroundColor = UIColor.init(red: 24/255, green: 31/255, blue: 42/255, alpha: 1)
+}
 
 

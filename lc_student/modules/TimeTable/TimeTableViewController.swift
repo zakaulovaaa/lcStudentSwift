@@ -1,22 +1,21 @@
 //
-//  MainMenu.swift
+//  TimeTableViewController.swift
 //  lc_student
 //
-//  Created by Дарья Закаулова on 14.05.2020.
+//  Created by Дарья Закаулова on 21.05.2020.
 //  Copyright © 2020 Дарья Закаулова. All rights reserved.
 //
 
 import UIKit
 
-class MainMenu: UITabBarController {
+class TimeTableViewController: UIViewController {
 
+    @IBOutlet var viewTimeTable: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        self.navigationItem.hidesBackButton = true
-        self.tabBar.tintColor = .green
-        self.tabBar.unselectedItemTintColor = TabBarAppearance.unselectedItemTintColor
-        self.tabBar.backgroundColor = TabBarAppearance.backgroundColor
+
+        self.viewTimeTable.backgroundColor = ViewAppearance.backgroundColor
         // Do any additional setup after loading the view.
     }
     

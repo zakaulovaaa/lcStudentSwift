@@ -38,6 +38,9 @@ class GroupPersonalCard: UITableViewController {
     
     //обработка нажатия на ячейку
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let action = self.groups[ indexPath.row ].name
             
         let cntGroup = UserSettings.userModel.studentsGroup?.filter( {($0.name == action)} )
