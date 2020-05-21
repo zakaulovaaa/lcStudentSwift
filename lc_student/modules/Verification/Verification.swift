@@ -10,9 +10,9 @@ import UIKit
 
 class Verification: UIViewController, UITextFieldDelegate {
     
-//    let ADDRESS: String = "http://192.168.1.185:8000/" // ДЛЯ ДИМЫ
+    let ADDRESS: String = "http://192.168.1.185:8000/" // ДЛЯ ДИМЫ
     
-    let ADDRESS: String = "http://localhost:8000/" //ДЛЯ ДАШИ
+//    let ADDRESS: String = "http://localhost:8000/" //ДЛЯ ДАШИ
     func printUserModel(user: UserModel) {
         print( "\n\n\nemail = \(user.email) \nlastName = \(user.lastName!) \nfirstName = \(user.firstName!) \nmiddleName = \(user.middleName!) \nisVerified = \(user.isVerified)" )
     }
@@ -84,15 +84,25 @@ class Verification: UIViewController, UITextFieldDelegate {
         dismiss(animated: true, completion: nil)
     }
     
+    
     //Нажатие кнопки Верификация
     @IBAction func sendToVerification(_ sender: Any) {
+        //Я тут сразу инфу поставил, потому что заебался вводить данные по сто тыщ раз
         let jsonObject: [String: Any] = [
             "email":                    emailField.text!,
-            "surname":                  secondNameField.text!,
-            "name":                     nameField.text!,
-            "middle_name":              middleNameField.text!,
-            "date_of_birth":            dataField.text!.replacingOccurrences(of: ".", with: ""),
-            "last_numbers_passport":    passportField.text!
+            
+            "surname":                 "Верхозин",
+            "name":                    "Илья",
+            "middle_name":             "Андреевич",
+            "date_of_birth":           "19970621",
+            "last_numbers_passport":   "7595"
+            
+//            "surname":                 secondNameField.text!,
+//            "name":                    nameField.text!,
+//            "middle_name":             middleNameField.text!,
+//            "date_of_birth":           dataField.text!.replacingOccurrences(of: ".", with: ""),
+//            "last_numbers_passport":   passportField.text!
+            
         ]
         let jsonRequest: [String : Any] = requestMain(
            urlStr: ADDRESS + "verification/",
@@ -107,7 +117,9 @@ class Verification: UIViewController, UITextFieldDelegate {
                 //Здесь добавляем отчет в алерте
                 alert.addAction(UIAlertAction(title: "Успех!", style: .default, handler: nil))
                 var lastName = "", firstName = "", middleName = ""
-                var email = UserSettings.userModel.email
+                
+                //Создаем массив в котором будет список групп, принадлежащих юзеру
+                var groupArray:[Group] = []
                 var isVerified: Bool = false
                 
                 if let cnt = jsonRequest[ "last_name" ] as? String {
@@ -121,15 +133,44 @@ class Verification: UIViewController, UITextFieldDelegate {
                 }
                 if let cnt = jsonRequest[ "is_verificated" ] as? Bool {
                     isVerified = cnt
-                    print("ASDASDSA: ", cnt)
                 }
+                
+                /**
+                 *Так как у нас в студентах лежит массив групп, то
+                 *1) Развертываем как массив словарей
+                 *2) Вытаскиваем первый элемент
+                 *3) Создаем экземпляр класса Group
+                 *4) Вставляем в массив групп
+                 *5) Удаляем первый элемент
+                 *
+                 *Скорее всего нельзя изменять элемент так в теле,
+                 *но это самое простое и эффективное решение
+                */
+                if var qq = jsonRequest[ "students" ] as? [[String:Any]] {
+                    while (true) {
+                        if (qq.count == 0) {
+                            break;
+                        }
+                        let group: Group = Group(name: qq.first?["group_name"] as! String,
+                                                 id:  qq.first?["id_ZK_1C"] as! String,
+                                                 degreeProgram: qq.first?["degree_program"] as! String,
+                                                 faculty: qq.first?["faculty_name"] as! String
+                        )
+                        groupArray.append(group)
+                        qq.remove(at: 0)
+                    }
+                }
+                
+
+                
+                
                 //UserSettings.userModel.email
-                let user: UserModel = UserModel( email: email,
+                let user: UserModel = UserModel( email: UserSettings.userModel.email,
                                                  isVerified: isVerified,
                                                  lastName: lastName,
                                                  firstName: firstName,
                                                  middleName: middleName,
-                                                 studentsGroup: [] )
+                                                 studentsGroup: groupArray )
                 
                 UserSettings.userModel = user
                 

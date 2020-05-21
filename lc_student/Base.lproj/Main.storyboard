@@ -58,26 +58,11 @@
         <!--Новости-->
         <scene sceneID="e38-JP-oKk">
             <objects>
-                <viewController id="ezM-Mp-2bL" sceneMemberID="viewController">
+                <viewController id="ezM-Mp-2bL" customClass="News" customModule="lc_student" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wnu-Gk-qLr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="В настоящее время модуль &quot;новости&quot; находится в разработке" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jky-Re-flq">
-                                <rect key="frame" x="41" y="144" width="332" height="269"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="jky-Re-flq" firstAttribute="leading" secondItem="rt0-25-MB9" secondAttribute="leading" constant="41" id="41Q-Ii-geI"/>
-                            <constraint firstItem="rt0-25-MB9" firstAttribute="trailing" secondItem="jky-Re-flq" secondAttribute="trailing" constant="41" id="c3q-9K-ySJ"/>
-                            <constraint firstItem="rt0-25-MB9" firstAttribute="bottom" secondItem="jky-Re-flq" secondAttribute="bottom" constant="400" id="f69-BG-h7P"/>
-                            <constraint firstItem="jky-Re-flq" firstAttribute="top" secondItem="rt0-25-MB9" secondAttribute="top" constant="100" id="vxw-91-fij"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="rt0-25-MB9"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Новости" image="bell.fill" catalog="system" id="eBN-fK-ckv">

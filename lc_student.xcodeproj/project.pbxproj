@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		269626AB24766AA700E8EC48 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269626AA24766AA600E8EC48 /* News.swift */; };
 		26DD172F246599A500430358 /* Verification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26DD172E246599A500430358 /* Verification.swift */; };
 		4D1B37E62455E2A6007E4DB6 /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1B37E52455E2A6007E4DB6 /* ServiceRequest.swift */; };
 		4D4DED4024664858008AD13C /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4DED3F24664858008AD13C /* ChangePassword.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		269626AA24766AA600E8EC48 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		26DD172E246599A500430358 /* Verification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verification.swift; sourceTree = "<group>"; };
 		4D1B37E52455E2A6007E4DB6 /* ServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
 		4D4DED3F24664858008AD13C /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
@@ -110,6 +112,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		269626A924766A8000E8EC48 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				269626AA24766AA600E8EC48 /* News.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
 		26DD172D2465994F00430358 /* Verification */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,6 +263,7 @@
 		4DFAC546245E7E0A007AD97C /* modules */ = {
 			isa = PBXGroup;
 			children = (
+				269626A924766A8000E8EC48 /* News */,
 				4DE41AC5247639C8002893BC /* TimeTable */,
 				4DCB85972459338D001A7997 /* Registration */,
 				4D9580C7246D366200B3CDE6 /* PersonalData */,
@@ -424,6 +435,7 @@
 				4DDA8410246CEFDD005E0EB4 /* MainMenu.swift in Sources */,
 				4DFAC543245DB439007AD97C /* Registration.swift in Sources */,
 				4DE9560424651B3F00FD510E /* FirstWindow.swift in Sources */,
+				269626AB24766AA700E8EC48 /* News.swift in Sources */,
 				4D9E8AF8243DF77C001B262D /* SceneDelegate.swift in Sources */,
 				4DFAC54B245EC2A3007AD97C /* MenuTable.swift in Sources */,
 			);
