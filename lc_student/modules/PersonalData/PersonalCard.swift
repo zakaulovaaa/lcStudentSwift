@@ -41,9 +41,13 @@ class PersonalCard: UITableViewController {
 
     let items: [PersonalCardItems] = getItemsData()
     
+    @IBOutlet var tableViewPersonalCard: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.rowHeight = 70.0
+        tableViewPersonalCard.backgroundColor = ViewAppearance.backgroundColor
+        
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -59,6 +63,7 @@ class PersonalCard: UITableViewController {
         //группы отрисовываем другим типом ячеек
         if (items[ indexPath.row ].name == "Учебная группа") {
             let cell = tableView.dequeueReusableCell(withIdentifier: "CellPersonalCardGroup", for: indexPath)
+            cell.backgroundColor = ViewAppearance.backgroundColor
             return cell
         } else {
             
@@ -69,6 +74,7 @@ class PersonalCard: UITableViewController {
             if let dataLabel = cell.viewWithTag(101) as? UILabel {
                 dataLabel.text = items[ indexPath.row ].data
             }
+            cell.backgroundColor = ViewAppearance.backgroundColor
             return cell
         }
     }

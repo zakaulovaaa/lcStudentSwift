@@ -58,9 +58,9 @@ class SignIn: UIViewController, UITextFieldDelegate {
      * TODO: ДАША НЕ ЗАБУДЬ ПОМЕНЯТЬ
      */
     
-    let ADDRESS: String = "http://192.168.1.185:8000/" // ДЛЯ ДИМЫ
+//    let ADDRESS: String = "http://192.168.1.185:8000/" // ДЛЯ ДИМЫ
     
- //   let ADDRESS: String = "http://localhost:8000/" //ДЛЯ ДАШИ
+    let ADDRESS: String = "http://localhost:8000/" //ДЛЯ ДАШИ
     
     //чекер для вывода
     func printUserModel(user: UserModel) {

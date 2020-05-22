@@ -12,8 +12,10 @@ class GroupPersonalCard: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableViewGroups.backgroundColor = ViewAppearance.backgroundColor
     }
-
+    @IBOutlet var tableViewGroups: UITableView!
+    
     //переход назад
     @IBAction func toPersonalCard(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -33,6 +35,7 @@ class GroupPersonalCard: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellGroup", for: indexPath)
         let group: Group = groups[ indexPath.row ]
         cell.textLabel?.text = group.name
+        cell.backgroundColor = ViewAppearance.backgroundColor
         return cell
     }
     
@@ -49,10 +52,10 @@ class GroupPersonalCard: UITableViewController {
         let message = "\n\(cntGroup?[ 0 ].degreeProgram ?? "") \n\n\(cntGroup?[ 0 ].faculty ?? "")"
         
         let alert = UIAlertController(title: "", message: "", preferredStyle: .alert)
-        let titleAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue", size: 24)!, NSAttributedString.Key.foregroundColor: UIColor.black]
+        let titleAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue", size: 24)!, NSAttributedString.Key.foregroundColor: AlertAppearance.titleColor]
         
         let titleString = NSAttributedString(string: action, attributes: titleAttributes)
-        let messageAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 16)!, NSAttributedString.Key.foregroundColor: UIColor.darkGray]
+        let messageAttributes = [NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-Light", size: 16)!, NSAttributedString.Key.foregroundColor: AlertAppearance.textColor]
         let messageString = NSAttributedString(string: message, attributes: messageAttributes)
         alert.setValue(titleString, forKey: "attributedTitle")
         alert.setValue(messageString, forKey: "attributedMessage")

@@ -10,13 +10,15 @@ import UIKit
 
 class Verification: UIViewController, UITextFieldDelegate {
     
-    let ADDRESS: String = "http://192.168.1.185:8000/" // ДЛЯ ДИМЫ
+//    let ADDRESS: String = "http://192.168.1.185:8000/" // ДЛЯ ДИМЫ
     
-//    let ADDRESS: String = "http://localhost:8000/" //ДЛЯ ДАШИ
+    let ADDRESS: String = "http://localhost:8000/" //ДЛЯ ДАШИ
     func printUserModel(user: UserModel) {
         print( "\n\n\nemail = \(user.email) \nlastName = \(user.lastName!) \nfirstName = \(user.firstName!) \nmiddleName = \(user.middleName!) \nisVerified = \(user.isVerified)" )
     }
 
+    @IBOutlet weak var btnVerification: UIButton!
+    @IBOutlet var viewVerification: UIView!
     @IBOutlet weak var dataField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var secondNameField: UITextField!
@@ -28,6 +30,85 @@ class Verification: UIViewController, UITextFieldDelegate {
     let datePicker = UIDatePicker()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //наводим красоту
+        viewVerification.backgroundColor = ViewAppearance.backgroundColor
+        
+        btnVerification.setTitleColor(ButtonAppearance.textColor, for: .normal)
+        
+        dataField.backgroundColor = TextFieldAppearance.backgroundColor
+        dataField.borderStyle = .none
+        dataField.layer.masksToBounds = false
+        dataField.layer.cornerRadius = 5.0;
+        dataField.layer.borderColor = UIColor.clear.cgColor
+        dataField.layer.shadowColor = TextFieldAppearance.shadowOpacityColor.cgColor
+        dataField.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        dataField.layer.shadowOpacity = 0.6
+        dataField.layer.shadowRadius = 4.0
+        dataField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: dataField.frame.height))
+        dataField.leftViewMode = .always
+        
+        emailField.backgroundColor = TextFieldAppearance.backgroundColor
+        emailField.borderStyle = .none
+        emailField.layer.masksToBounds = false
+        emailField.layer.cornerRadius = 5.0;
+        emailField.layer.borderColor = UIColor.clear.cgColor
+        emailField.layer.shadowColor = TextFieldAppearance.shadowOpacityColor.cgColor
+        emailField.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        emailField.layer.shadowOpacity = 0.6
+        emailField.layer.shadowRadius = 4.0
+        emailField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: emailField.frame.height))
+        emailField.leftViewMode = .always
+        
+        secondNameField.backgroundColor = TextFieldAppearance.backgroundColor
+        secondNameField.borderStyle = .none
+        secondNameField.layer.masksToBounds = false
+        secondNameField.layer.cornerRadius = 5.0;
+        secondNameField.layer.borderColor = UIColor.clear.cgColor
+        secondNameField.layer.shadowColor = TextFieldAppearance.shadowOpacityColor.cgColor
+        secondNameField.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        secondNameField.layer.shadowOpacity = 0.6
+        secondNameField.layer.shadowRadius = 4.0
+        secondNameField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: secondNameField.frame.height))
+        secondNameField.leftViewMode = .always
+        
+        nameField.backgroundColor = TextFieldAppearance.backgroundColor
+        nameField.borderStyle = .none
+        nameField.layer.masksToBounds = false
+        nameField.layer.cornerRadius = 5.0;
+        nameField.layer.borderColor = UIColor.clear.cgColor
+        nameField.layer.shadowColor = TextFieldAppearance.shadowOpacityColor.cgColor
+        nameField.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        nameField.layer.shadowOpacity = 0.6
+        nameField.layer.shadowRadius = 4.0
+        nameField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: nameField.frame.height))
+        nameField.leftViewMode = .always
+        
+        middleNameField.backgroundColor = TextFieldAppearance.backgroundColor
+        middleNameField.borderStyle = .none
+        middleNameField.layer.masksToBounds = false
+        middleNameField.layer.cornerRadius = 5.0;
+        middleNameField.layer.borderColor = UIColor.clear.cgColor
+        middleNameField.layer.shadowColor = TextFieldAppearance.shadowOpacityColor.cgColor
+        middleNameField.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        middleNameField.layer.shadowOpacity = 0.6
+        middleNameField.layer.shadowRadius = 4.0
+        middleNameField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: middleNameField.frame.height))
+        middleNameField.leftViewMode = .always
+        
+        passportField.backgroundColor = TextFieldAppearance.backgroundColor
+        passportField.borderStyle = .none
+        passportField.layer.masksToBounds = false
+        passportField.layer.cornerRadius = 5.0;
+        passportField.layer.borderColor = UIColor.clear.cgColor
+        passportField.layer.shadowColor = TextFieldAppearance.shadowOpacityColor.cgColor
+        passportField.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        passportField.layer.shadowOpacity = 0.6
+        passportField.layer.shadowRadius = 4.0
+        passportField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: passportField.frame.height))
+        passportField.leftViewMode = .always
+        
+        
         //Заполняем поле с почтой по умолчанию
         emailField.text = UserSettings.userModel.email
         

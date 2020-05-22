@@ -18,9 +18,51 @@ class ChangePassword: UIViewController {
     @IBOutlet weak var oldPassword: UITextField!
     @IBOutlet weak var newPassword1: UITextField!
     @IBOutlet weak var newPassword2: UITextField!
+    @IBOutlet var viewChangePassword: UIView!
+    @IBOutlet weak var warningLC: NSLayoutConstraint!
+    @IBOutlet weak var btnChangePassword: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //наводим красоту
+        viewChangePassword.backgroundColor = ViewAppearance.backgroundColor
+        btnChangePassword.setTitleColor(ButtonAppearance.textColor, for: .normal)
+        
+        oldPassword.backgroundColor = TextFieldAppearance.backgroundColor
+        oldPassword.borderStyle = .none
+        oldPassword.layer.masksToBounds = false
+        oldPassword.layer.cornerRadius = 5.0;
+        oldPassword.layer.borderColor = UIColor.clear.cgColor
+        oldPassword.layer.shadowColor = TextFieldAppearance.shadowOpacityColor.cgColor
+        oldPassword.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        oldPassword.layer.shadowOpacity = 0.6
+        oldPassword.layer.shadowRadius = 4.0
+        oldPassword.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: oldPassword.frame.height))
+        oldPassword.leftViewMode = .always
+        
+        newPassword1.backgroundColor = TextFieldAppearance.backgroundColor
+        newPassword1.borderStyle = .none
+        newPassword1.layer.masksToBounds = false
+        newPassword1.layer.cornerRadius = 5.0;
+        newPassword1.layer.borderColor = UIColor.clear.cgColor
+        newPassword1.layer.shadowColor = TextFieldAppearance.shadowOpacityColor.cgColor
+        newPassword1.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        newPassword1.layer.shadowOpacity = 0.6
+        newPassword1.layer.shadowRadius = 4.0
+        newPassword1.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: newPassword1.frame.height))
+        newPassword1.leftViewMode = .always
+        
+        newPassword2.backgroundColor = TextFieldAppearance.backgroundColor
+        newPassword2.borderStyle = .none
+        newPassword2.layer.masksToBounds = false
+        newPassword2.layer.cornerRadius = 5.0;
+        newPassword2.layer.borderColor = UIColor.clear.cgColor
+        newPassword2.layer.shadowColor = TextFieldAppearance.shadowOpacityColor.cgColor
+        newPassword2.layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
+        newPassword2.layer.shadowOpacity = 0.6
+        newPassword2.layer.shadowRadius = 4.0
+        newPassword2.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: newPassword2.frame.height))
+        newPassword2.leftViewMode = .always
         
     }
     //при нажатии на кнопку сменить
@@ -35,6 +77,8 @@ class ChangePassword: UIViewController {
             warning.text += "\nВведенные пароли не совпадают"
             check = false
         }
+        self.warningLC.constant = self.warning.contentSize.height
+        
         if ( check ) {
             let jsonObject: [ String: Any ] = [
                 "email": UserSettings.userModel.email,

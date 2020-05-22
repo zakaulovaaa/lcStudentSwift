@@ -14,6 +14,8 @@ enum ButtonAppearance {
 }
 enum ViewAppearance {
     static let backgroundColor = UIColor.init(red: 19/255, green: 25/255, blue: 34/255, alpha: 1)
+    
+//    static let backgroundColor = UIColor.init(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
 }
 enum TextFieldAppearance {
     static let backgroundColor = UIColor.init(red: 24/255, green: 31/255, blue: 42/255, alpha: 1)
@@ -23,6 +25,12 @@ enum TextFieldAppearance {
 enum TabBarAppearance {
     static let unselectedItemTintColor = UIColor.init(red: 176/255, green: 189/255, blue: 202/255, alpha: 1)
     static let backgroundColor = UIColor.init(red: 24/255, green: 31/255, blue: 42/255, alpha: 1)
+}
+
+enum AlertAppearance {
+    static let backgroundColor = UIColor.init(red: 24/255, green: 31/255, blue: 42/255, alpha: 1)
+    static let textColor = UIColor.init(red: 173/255, green: 187/255, blue: 203/255, alpha: 1)
+    static let titleColor = UIColor.init(red: 207/255, green: 216/255, blue: 226/255, alpha: 1)
 }
 
 

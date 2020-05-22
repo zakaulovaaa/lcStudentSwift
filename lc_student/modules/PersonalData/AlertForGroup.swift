@@ -12,7 +12,6 @@ class AlertForGroup: UIAlertController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
 //        self.fo
         // Do any additional setup after loading the view.
     }
