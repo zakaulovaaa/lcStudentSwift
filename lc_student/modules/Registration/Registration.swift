@@ -83,8 +83,6 @@ class Registration: UIViewController {
         }
         
         
-        
-        
         //если ошибок не обнаружено
         if ( check ) {
             //собираем json

@@ -13,7 +13,9 @@
 		4D4DED4024664858008AD13C /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4DED3F24664858008AD13C /* ChangePassword.swift */; };
 		4D5EB061244B5C9C00B19EDC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5EB060244B5C9C00B19EDC /* User.swift */; };
 		4D6078D424724B09006E962A /* AlertForGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6078D324724B09006E962A /* AlertForGroup.swift */; };
+		4D765ACE247A84E700DE86CB /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D765ACD247A84E700DE86CB /* NewsTableViewCell.swift */; };
 		4D8361572475710100186334 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8361562475710100186334 /* Colors.swift */; };
+		4D8FB6F1247A4D1200946722 /* newsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8FB6F0247A4D1200946722 /* newsTable.swift */; };
 		4D9580C9246D375300B3CDE6 /* PersonalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9580C8246D375300B3CDE6 /* PersonalCard.swift */; };
 		4D9580CF246D785700B3CDE6 /* CellPersonalDataGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9580CE246D785700B3CDE6 /* CellPersonalDataGroup.swift */; };
 		4D9580D1246D8B3300B3CDE6 /* GroupPersonalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9580D0246D8B3300B3CDE6 /* GroupPersonalCard.swift */; };
@@ -59,7 +61,9 @@
 		4D4DED3F24664858008AD13C /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 		4D5EB060244B5C9C00B19EDC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4D6078D324724B09006E962A /* AlertForGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertForGroup.swift; sourceTree = "<group>"; };
+		4D765ACD247A84E700DE86CB /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		4D8361562475710100186334 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		4D8FB6F0247A4D1200946722 /* newsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newsTable.swift; sourceTree = "<group>"; };
 		4D9580C8246D375300B3CDE6 /* PersonalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCard.swift; sourceTree = "<group>"; };
 		4D9580CE246D785700B3CDE6 /* CellPersonalDataGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellPersonalDataGroup.swift; sourceTree = "<group>"; };
 		4D9580D0246D8B3300B3CDE6 /* GroupPersonalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPersonalCard.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				269626AA24766AA600E8EC48 /* News.swift */,
+				4D8FB6F0247A4D1200946722 /* newsTable.swift */,
+				4D765ACD247A84E700DE86CB /* NewsTableViewCell.swift */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -425,11 +431,13 @@
 				4D5EB061244B5C9C00B19EDC /* User.swift in Sources */,
 				4D9580D1246D8B3300B3CDE6 /* GroupPersonalCard.swift in Sources */,
 				4D9580C9246D375300B3CDE6 /* PersonalCard.swift in Sources */,
+				4D765ACE247A84E700DE86CB /* NewsTableViewCell.swift in Sources */,
 				4D9E8AFA243DF77C001B262D /* ViewController.swift in Sources */,
 				4DFAC549245E7EE4007AD97C /* RecoverThePassword.swift in Sources */,
 				4D4DED4024664858008AD13C /* ChangePassword.swift in Sources */,
 				4DAFBE56244C8CB80040C3D0 /* SignIn.swift in Sources */,
 				4D9E8AF6243DF77C001B262D /* AppDelegate.swift in Sources */,
+				4D8FB6F1247A4D1200946722 /* newsTable.swift in Sources */,
 				4DE956072465869900FD510E /* MainSettings.swift in Sources */,
 				4DE41AC7247639F0002893BC /* TimeTableViewController.swift in Sources */,
 				4DDA8410246CEFDD005E0EB4 /* MainMenu.swift in Sources */,

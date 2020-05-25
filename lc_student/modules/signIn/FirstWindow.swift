@@ -13,6 +13,7 @@ class FirstWindow: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 //        print( UserSettings.userModel ?? "нету" )
+        
         if UserSettings.userModel != nil {
             DispatchQueue.main.async(execute: {
                 let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
